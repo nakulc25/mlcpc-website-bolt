@@ -29,6 +29,12 @@ export interface SiteConfig {
     freeMinutes: number;
     description: string;
   };
+  email: {
+    serviceId: string;
+    templateId: string;
+    publicKey: string;
+    toEmail: string;
+  };
 }
 
 export const siteConfig: SiteConfig = {
@@ -70,5 +76,11 @@ export const siteConfig: SiteConfig = {
     urgentKeyword: "Urgent",
     freeMinutes: 15,
     description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases."
+  },
+  email: {
+    serviceId: "YOUR_EMAILJS_SERVICE_ID", // Replace with your EmailJS service ID
+    templateId: "YOUR_EMAILJS_TEMPLATE_ID", // Replace with your EmailJS template ID
+    publicKey: "YOUR_EMAILJS_PUBLIC_KEY", // Replace with your EmailJS public key
+    toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
   }
 };
