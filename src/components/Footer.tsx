@@ -62,6 +62,9 @@ const Footer = () => {
           <p className="text-sm">
             © 2025 {siteConfig.firm.name} All rights reserved.
           </p>
+          <p className="text-xs mt-2">
+            This website is for informational purposes only and does not constitute legal advice.
+          </p>
         </div>
       </div>
     </footer>
