@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X, Scale } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ const Header = () => {
             <div className="flex items-center justify-center w-12 h-12 bg-emerald-700 rounded-lg">
               <Scale className="w-7 h-7 text-white" />
             </div>
-            <div className="text-2xl font-bold text-emerald-700">M&C</div>
+            <div className="text-2xl font-bold text-emerald-700">{siteConfig.firm.shortName}</div>
           </div>
 
           {/* Desktop Navigation */}

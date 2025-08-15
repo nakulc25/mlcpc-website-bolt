@@ -1,4 +1,5 @@
 import React from 'react';
+import { siteConfig } from '../config/siteConfig';
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop)'
+          backgroundImage: `url(${siteConfig.hero.backgroundImage})`
         }}
       >
         <div className="absolute inset-0 bg-emerald-900 bg-opacity-70"></div>
@@ -16,15 +17,15 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-          Mall & Chhibbar Legal
+          {siteConfig.hero.title}
           <br />
-          <span className="text-yellow-400">Professional Corp.</span>
+          <span className="text-yellow-400">{siteConfig.hero.subtitle}</span>
         </h1>
         <p className="text-xl md:text-2xl mb-8 text-gray-200">
-          Protecting What Matters
+          {siteConfig.firm.tagline}
         </p>
         <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-          Schedule Consultation
+          {siteConfig.hero.buttonText}
         </button>
       </div>
 

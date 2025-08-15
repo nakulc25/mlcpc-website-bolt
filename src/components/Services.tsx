@@ -1,17 +1,17 @@
 import React from 'react';
 import { Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield } from 'lucide-react';
+import { siteConfig } from '../config/siteConfig';
 
 const Services = () => {
-  const services = [
-    { name: 'Family Law', icon: Users, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Wills & Estates', icon: FileText, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Civil Litigation', icon: Gavel, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Real Estate', icon: Home, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Business Law', icon: Building, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Employment Law', icon: Briefcase, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Immigration', icon: Plane, color: 'bg-emerald-700 hover:bg-emerald-800' },
-    { name: 'Criminal Law', icon: Shield, color: 'bg-emerald-700 hover:bg-emerald-800' },
+  const serviceIcons = [
+    Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield
   ];
+  
+  const services = siteConfig.services.map((serviceName, index) => ({
+    name: serviceName,
+    icon: serviceIcons[index] || Users,
+    color: 'bg-emerald-700 hover:bg-emerald-800'
+  }));
 
   return (
     <section id="services" className="py-20 bg-gray-50">
