@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
-import { Clock, CheckCircle } from 'lucide-react';
+import { Clock, CheckCircle, Send, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 import { siteConfig } from '../config/siteConfig';
+
+interface FormStatus {
+  type: 'idle' | 'loading' | 'success' | 'error';
+  message: string;
+}
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +15,58 @@ const Contact = () => {
     message: '',
     urgent: false
   });
+  
+  const [formStatus, setFormStatus] = useState<FormStatus>({
+    type: 'idle',
+    message: ''
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    
+    setFormStatus({ type: 'loading', message: 'Sending message...' });
+    
+    try {
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: siteConfig.email.toEmail,
+        urgent: formData.urgent ? 'Yes - URGENT' : 'No',
+        subject: formData.urgent 
+          ? `URGENT: New Contact Form Submission from ${formData.name}`
+          : `New Contact Form Submission from ${formData.name}`
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(
+        siteConfig.email.serviceId,
+        siteConfig.email.templateId,
+        templateParams,
+        siteConfig.email.publicKey
+      );
+
+      setFormStatus({
+        type: 'success',
+        message: 'Message sent successfully! We will get back to you soon.'
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+        urgent: false
+      });
+      
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setFormStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or contact us directly.'
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,6 +77,10 @@ const Contact = () => {
     }));
   };
 
+  const resetStatus = () => {
+    setFormStatus({ type: 'idle', message: '' });
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,6 +88,30 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Get in touch</h2>
+            
+            {/* Status Message */}
+            {formStatus.type !== 'idle' && (
+              <div className={`mb-6 p-4 rounded-lg flex items-center space-x-3 ${
+                formStatus.type === 'success' 
+                  ? 'bg-green-50 text-green-800 border border-green-200' 
+                  : formStatus.type === 'error'
+                  ? 'bg-red-50 text-red-800 border border-red-200'
+                  : 'bg-blue-50 text-blue-800 border border-blue-200'
+              }`}>
+                {formStatus.type === 'success' && <CheckCircle className="w-5 h-5 flex-shrink-0" />}
+                {formStatus.type === 'error' && <AlertCircle className="w-5 h-5 flex-shrink-0" />}
+                {formStatus.type === 'loading' && <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin flex-shrink-0"></div>}
+                <span>{formStatus.message}</span>
+                {formStatus.type !== 'loading' && (
+                  <button 
+                    onClick={resetStatus}
+                    className="ml-auto text-sm underline hover:no-underline"
+                  >
+                    Dismiss
+                  </button>
+                )}
+              </div>
+            )}
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -45,6 +126,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
+                  disabled={formStatus.type === 'loading'}
                 />
               </div>
               
@@ -60,6 +142,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
+                  disabled={formStatus.type === 'loading'}
                 />
               </div>
               
@@ -75,14 +158,41 @@ const Contact = () => {
                   rows={6}
                   required
                   className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 resize-vertical"
+                  disabled={formStatus.type === 'loading'}
                 />
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <input
+                  type="checkbox"
+                  id="urgent"
+                  name="urgent"
+                  checked={formData.urgent}
+                  onChange={handleChange}
+                  className="w-4 h-4 text-emerald-600 bg-gray-100 border-gray-300 rounded focus:ring-emerald-500 focus:ring-2"
+                  disabled={formStatus.type === 'loading'}
+                />
+                <label htmlFor="urgent" className="text-sm font-medium text-gray-700">
+                  This is an <strong>urgent</strong> matter requiring immediate attention
+                </label>
               </div>
               
               <button
                 type="submit"
-                className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 transform hover:scale-105"
+                disabled={formStatus.type === 'loading'}
+                className="w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 disabled:hover:scale-100 flex items-center justify-center space-x-2"
               >
-                Send Message
+                {formStatus.type === 'loading' ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
