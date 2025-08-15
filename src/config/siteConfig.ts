@@ -14,7 +14,7 @@ export interface SiteConfig {
       postalCode: string;
     };
     phone: string;
-    email: nakul@mclpc.ca;
+    email: string;
     fax: string;
   };
   services: string[];
@@ -47,7 +47,7 @@ export const siteConfig: SiteConfig = {
       postalCode: "M5H 2Y4"
     },
     phone: "(416) 123-4567",
-    email: "info@mclaw.ca",
+    email: "nakul@mclpc.ca",
     fax: "(416) 123-4568"
   },
   services: [
