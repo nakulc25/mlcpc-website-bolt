@@ -78,9 +78,9 @@ export const siteConfig: SiteConfig = {
     description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases."
   },
   email: {
-    serviceId: "YOUR_EMAILJS_SERVICE_ID", // Replace with your EmailJS service ID
-    templateId: "YOUR_EMAILJS_TEMPLATE_ID", // Replace with your EmailJS template ID
-    publicKey: "YOUR_EMAILJS_PUBLIC_KEY", // Replace with your EmailJS public key
+    serviceId: "service_udmbcw8", // Replace with your EmailJS service ID
+    templateId: "template_18ibdta", // Replace with your EmailJS template ID
+    publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
     toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
   }
 };
