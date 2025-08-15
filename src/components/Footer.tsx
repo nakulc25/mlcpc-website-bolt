@@ -60,10 +60,7 @@ const Footer = () => {
 
         <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-emerald-200">
           <p className="text-sm">
-            © 2024 {siteConfig.firm.name} All rights reserved.
-          </p>
-          <p className="text-xs mt-2">
-            This website is for informational purposes only and does not constitute legal advice.
+            © 2025 {siteConfig.firm.name} All rights reserved.
           </p>
         </div>
       </div>
