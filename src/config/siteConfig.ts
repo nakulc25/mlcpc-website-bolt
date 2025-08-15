@@ -14,7 +14,7 @@ export interface SiteConfig {
       postalCode: string;
     };
     phone: string;
-    email: string;
+    email: nakul@mclpc.ca;
     fax: string;
   };
   services: string[];
