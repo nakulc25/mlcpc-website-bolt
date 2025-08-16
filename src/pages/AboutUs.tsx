@@ -9,7 +9,18 @@ const AboutUs = () => {
       <section className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-6">
-            <Scale className="w-16 h-16 text-yellow-400" />
+            <img 
+              src="/Logo_Assets/logo_128x128.png" 
+              alt={`${siteConfig.firm.shortName} Logo`}
+              className="w-16 h-16"
+              onError={(e) => {
+                // Fallback to icon if logo not found
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <Scale className="hidden w-16 h-16 text-yellow-400" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Our Firm</h1>
           <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">

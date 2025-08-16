@@ -29,7 +29,18 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <div className="flex items-center justify-center w-12 h-12 bg-emerald-700 rounded-lg">
+            <img 
+              src="/Logo_Assets/logo_64x64.png" 
+              alt={`${siteConfig.firm.shortName} Logo`}
+              className="w-12 h-12 rounded-lg"
+              onError={(e) => {
+                // Fallback to icon if logo not found
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <div className="hidden items-center justify-center w-12 h-12 bg-emerald-700 rounded-lg">
               <Scale className="w-7 h-7 text-white" />
             </div>
             <div className="text-2xl font-bold text-emerald-700">{siteConfig.firm.shortName}</div>

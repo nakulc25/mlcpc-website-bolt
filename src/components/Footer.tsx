@@ -10,7 +10,18 @@ const Footer = () => {
           {/* Logo and Tagline */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="flex items-center justify-center w-12 h-12 bg-white rounded-lg">
+              <img 
+                src="/Logo_Assets/logo_64x64.png" 
+                alt={`${siteConfig.firm.shortName} Logo`}
+                className="w-12 h-12 bg-white rounded-lg p-1"
+                onError={(e) => {
+                  // Fallback to icon if logo not found
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  target.nextElementSibling?.classList.remove('hidden');
+                }}
+              />
+              <div className="hidden items-center justify-center w-12 h-12 bg-white rounded-lg">
                 <Scale className="w-7 h-7 text-emerald-700" />
               </div>
               <div className="text-3xl font-bold">{siteConfig.firm.shortName}</div>

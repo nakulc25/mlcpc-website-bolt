@@ -1,0 +1,12 @@
+<!-- This file should contain the scalable vector version of the M&C logo -->
+<!-- Used for: Infinite scalability, web displays, print materials -->
+<!-- 
+Recommended SVG structure:
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g id="logo">
+    <!-- Logo elements here -->
+    <!-- Use emerald green (#059669) and gold (#d4af37) colors -->
+    <!-- Include scale/justice symbol and M&C text -->
+  </g>
+</svg>
+-->
