@@ -35,6 +35,17 @@ export interface SiteConfig {
     publicKey: string;
     toEmail: string;
   };
+  lawyers: {
+    id: string;
+    name: string;
+    title: string;
+    image: string;
+    background: string;
+    expertise: string[];
+    education: string[];
+    certifications: string[];
+    experience: string;
+  }[];
 }
 
 export const siteConfig: SiteConfig = {
@@ -82,5 +93,59 @@ export const siteConfig: SiteConfig = {
     templateId: "template_18ibdta", // Replace with your EmailJS template ID
     publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
     toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
-  }
+  },
+  lawyers: [
+    {
+      id: "nakul-chhibbar",
+      name: "Nakul Chhibbar",
+      title: "Senior Partner & Founding Member",
+      image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
+      background: "Nakul Chhibbar brings over 15 years of comprehensive legal experience to Mall & Chhibbar Legal Professional Corp. As a founding partner, he has built a reputation for providing strategic legal counsel and achieving favorable outcomes for clients across diverse practice areas.",
+      expertise: [
+        "Family Law & Divorce Proceedings",
+        "Civil Litigation & Dispute Resolution",
+        "Business Law & Corporate Matters",
+        "Real Estate Transactions",
+        "Employment Law"
+      ],
+      education: [
+        "Juris Doctor (J.D.) - University of Toronto Faculty of Law",
+        "Bachelor of Arts (Honours) - Political Science, York University",
+        "Certificate in Alternative Dispute Resolution - Osgoode Hall"
+      ],
+      certifications: [
+        "Licensed to Practice Law in Ontario",
+        "Member of the Law Society of Ontario",
+        "Certified Mediator - ADR Institute of Ontario",
+        "Continuing Legal Education - Family Law Specialist"
+      ],
+      experience: "15+ years of legal practice with a focus on achieving client-centered solutions through both litigation and alternative dispute resolution methods."
+    },
+    {
+      id: "hannah-mall",
+      name: "Hannah Mall",
+      title: "Partner & Head of Immigration Law",
+      image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
+      background: "Hannah Mall is a dedicated legal professional specializing in immigration law and criminal defense. With her compassionate approach and thorough understanding of complex legal frameworks, she has successfully represented hundreds of clients in their most challenging legal matters.",
+      expertise: [
+        "Immigration & Refugee Law",
+        "Criminal Law & Defense",
+        "Wills & Estate Planning",
+        "Human Rights Law",
+        "Appeals & Judicial Review"
+      ],
+      education: [
+        "Juris Doctor (J.D.) - Osgoode Hall Law School, York University",
+        "Master of Laws (LL.M.) - Immigration Law, University of British Columbia",
+        "Bachelor of Arts (Honours) - International Relations, University of Toronto"
+      ],
+      certifications: [
+        "Licensed to Practice Law in Ontario",
+        "Member of the Law Society of Ontario",
+        "Immigration Consultant Certification - ICCRC",
+        "Criminal Law Specialist Certification"
+      ],
+      experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases."
+    }
+  ]
 };

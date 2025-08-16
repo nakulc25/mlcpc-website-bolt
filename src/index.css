@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 /* Custom animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -12,6 +23,10 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.8s ease-out forwards;
 }
 
 .animate-fadeInUp {
@@ -54,6 +69,27 @@ textarea:focus {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
+  
+  .lawyer-profile {
+    margin-bottom: 2rem;
+  }
+}
+
+/* About page specific styles */
+.lawyer-card {
+  transition: all 0.3s ease;
+}
+
+.lawyer-card:hover {
+  transform: translateY(-5px);
+}
+
+.expertise-item {
+  transition: color 0.2s ease;
+}
+
+.expertise-item:hover {
+  color: #059669;
 }
 
 /* Print styles */

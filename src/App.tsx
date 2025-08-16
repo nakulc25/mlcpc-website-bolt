@@ -1,8 +1,8 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Contact from './components/Contact';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
 import Footer from './components/Footer';
 import EmailSetup from './components/EmailSetup';
 import { siteConfig } from './config/siteConfig';
@@ -15,9 +15,10 @@ function App() {
     <div className="min-h-screen">
       {!isEmailConfigured && <EmailSetup />}
       <Header />
-      <Hero />
-      <Services />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+      </Routes>
       <Footer />
     </div>
   );
