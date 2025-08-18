@@ -26,9 +26,6 @@ const Footer = () => {
               </div>
               <div className="text-3xl font-bold">{siteConfig.firm.shortName}</div>
             </div>
-            <p className="text-emerald-200 italic text-lg mb-6">
-              - {siteConfig.firm.tagline} -
-            </p>
           </div>
 
           {/* Address Information */}
