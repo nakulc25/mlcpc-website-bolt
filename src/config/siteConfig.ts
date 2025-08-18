@@ -53,19 +53,19 @@ export const siteConfig: SiteConfig = {
     name: "Mall & Chhibbar Legal Professional Corporation",
     shortName: "M&C",
     tagline: "Protecting What Matters",
-    description: "Professional legal services in Toronto and the GTA"
+    description: "Serving Toronto and the GTA"
   },
   contact: {
     address: {
-      street: "123 Bay Street",
-      suite: "Suite 1500",
-      city: "Toronto",
+      street: "111 Civic Centre Dr",
+      suite: "",
+      city: "Whitby",
       province: "ON",
-      postalCode: "M5H 2Y4"
+      postalCode: "L1R 0C8"
     },
-    phone: "(416) 123-4567",
+    phone: "(437) 848-2583",
     email: "nakul@mclpc.ca",
-    fax: "(416) 123-4568"
+    fax: "(437) 848-4514"
   },
   services: [
     "Family Law",
