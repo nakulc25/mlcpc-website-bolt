@@ -30,9 +30,9 @@ const AboutUs = () => {
       </section>
 
       {/* Firm Overview */}
-      <section className="py-16 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               {siteConfig.firm.name}
             </h2>
@@ -46,9 +46,9 @@ const AboutUs = () => {
       </section>
 
       {/* Lawyers Profiles */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-8 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Legal Team</h2>
             <p className="text-lg text-gray-600">
               Experienced professionals committed to excellence in legal representation
@@ -64,7 +64,7 @@ const AboutUs = () => {
               >
                 {/* Profile Header */}
                 <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 text-white text-center">
-                  <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img 
                       src={lawyer.image} 
                       alt={`${lawyer.name} - ${lawyer.title}`}
