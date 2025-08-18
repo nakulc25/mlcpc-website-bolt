@@ -2,6 +2,15 @@ import React from 'react';
 import { siteConfig } from '../config/siteConfig';
 
 const Hero = () => {
+  const handleScheduleClick = () => {
+    if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
+      window.open(siteConfig.booking.calendlyUrl, '_blank');
+    } else {
+      // Fallback to contact section
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -24,7 +33,10 @@ const Hero = () => {
         <p className="text-xl md:text-2xl mb-8 text-gray-200">
           {siteConfig.firm.tagline}
         </p>
-        <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <button 
+          onClick={handleScheduleClick}
+          className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+        >
           {siteConfig.hero.buttonText}
         </button>
       </div>

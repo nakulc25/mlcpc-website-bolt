@@ -24,6 +24,10 @@ export interface SiteConfig {
     subtitle: string;
     buttonText: string;
   };
+  booking: {
+    calendlyUrl: string;
+    enabled: boolean;
+  };
   consultation: {
     urgentKeyword: string;
     freeMinutes: number;
@@ -35,12 +39,20 @@ export interface SiteConfig {
     publicKey: string;
     toEmail: string;
   };
+  testimonials: {
+    id: string;
+    name: string;
+    title: string;
+    company?: string;
+    content: string;
+    rating: number;
+  }[];
   lawyers: {
     id: string;
     name: string;
     title: string;
     image: string;
-    background: string;
+    background: string[];
     expertise: string[];
     education: string[];
     certifications: string[];
@@ -85,6 +97,10 @@ export const siteConfig: SiteConfig = {
     subtitle: "Professional Corporation",
     buttonText: "Schedule Consultation"
   },
+  booking: {
+    calendlyUrl: "https://calendly.com/your-calendly-username/consultation",
+    enabled: true
+  },
   consultation: {
     urgentKeyword: "Urgent",
     freeMinutes: 15,
@@ -96,13 +112,41 @@ export const siteConfig: SiteConfig = {
     publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
     toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
   },
+  testimonials: [
+    {
+      id: "testimonial-1",
+      name: "Sarah Johnson",
+      title: "Business Owner",
+      company: "Johnson Enterprises",
+      content: "Mall & Chhibbar provided exceptional legal guidance during our business acquisition. Their attention to detail and professional approach made a complex process seamless.",
+      rating: 5
+    },
+    {
+      id: "testimonial-2",
+      name: "Michael Chen",
+      title: "Real Estate Investor",
+      content: "Outstanding service in handling our real estate transactions. The team was responsive, knowledgeable, and always kept our best interests in mind.",
+      rating: 5
+    },
+    {
+      id: "testimonial-3",
+      name: "Lisa Rodriguez",
+      title: "Family Law Client",
+      content: "During a difficult family situation, they provided compassionate yet strong legal representation. I couldn't have asked for better advocates.",
+      rating: 5
+    }
+  ],
   lawyers: [
     {
       id: "henaa-mall",
       name: "Henaa Mall",
       title: "Partner",
       image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
-      background: "Henaa Mall brings a distinctive global perspective to her practice, combining corporate law experience with investment banking acumen. After relocating to Canada in 2020, she earned her LLM from the University of Toronto while conducting tax law research, then completed her articles with an upper-tier municipality before being called to the Ontario bar in 2023. Focussing on Real Estate, Civil Litigation, Employment Law, Business Law, and Immigration, Henaa bridges transactional expertise with dispute resolution skills. Beyond her practice, she's deeply committed to professional development - mentoring over 1,000 internationally trained lawyers from 35+ countries and serving in leadership roles with the Durham Region Law Association and Durham College's Paralegal Program Advisory Committee. Fluent five languages, a published author and educator at heart, Henaa balances her legal practice with passions for Vedic astrology and yoga. When not advocating for clients or mentoring future lawyers, she enjoys culinary adventures across Ontario and relaxing with her sister and cats.",
+      background: [
+        "Henaa Mall brings a distinctive global perspective to her practice, combining corporate law experience with investment banking acumen. After relocating to Canada in 2020, she earned her LLM from the University of Toronto while conducting tax law research, then completed her articles with an upper-tier municipality before being called to the Ontario bar in 2023.",
+        "Focussing on Real Estate, Civil Litigation, Employment Law, Business Law, and Immigration, Henaa bridges transactional expertise with dispute resolution skills. Beyond her practice, she's deeply committed to professional development - mentoring over 1,000 internationally trained lawyers from 35+ countries and serving in leadership roles with the Durham Region Law Association and Durham College's Paralegal Program Advisory Committee.",
+        "Fluent five languages, a published author and educator at heart, Henaa balances her legal practice with passions for Vedic astrology and yoga. When not advocating for clients or mentoring future lawyers, she enjoys culinary adventures across Ontario and relaxing with her sister and cats."
+      ],
       expertise: [
         "Family Law & Divorce Proceedings",
         "Civil Litigation & Dispute Resolution",
@@ -125,7 +169,11 @@ export const siteConfig: SiteConfig = {
       name: "Nakul Chhibbar",
       title: "Partner",
       image: "https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop&crop=face",
-      background: "Nakul Chhibbar is a strategic advocate with strong hold in Family Law, Wills & Estates, Civil Litigation and Real Estate Law. Licensed to practice law in Ontario, Nakul combines meticulous legal analysis with practical solutions tailored to each client's needs. Nakul's approach reflects his belief that law, like fitness, requires discipline, adaptability and commitment to excellence. When not advocating for clients, he trains with the same focus he brings to the courtroom, often accompanied by his loyal dog Bravo. At Mall & Chhibbar, Nakul has built a practice that mirrors his values: integrity in every action, diligence in every case, and personalized attention for every client. He navigates complex legal challenges with clarity and determination, transforming obstacles into favorable outcomes. An active member of the Durham Region Law Association and Peel Law Association, Nakul services clients across Ontario. Nakul serves clients fluent in English, Hindi, Urdu and Punjabi. ",
+      background: [
+        "Nakul Chhibbar is a strategic advocate with strong hold in Family Law, Wills & Estates, Civil Litigation and Real Estate Law. Licensed to practice law in Ontario, Nakul combines meticulous legal analysis with practical solutions tailored to each client's needs.",
+        "Nakul's approach reflects his belief that law, like fitness, requires discipline, adaptability and commitment to excellence. When not advocating for clients, he trains with the same focus he brings to the courtroom, often accompanied by his loyal dog Bravo.",
+        "At Mall & Chhibbar, Nakul has built a practice that mirrors his values: integrity in every action, diligence in every case, and personalized attention for every client. He navigates complex legal challenges with clarity and determination, transforming obstacles into favorable outcomes. An active member of the Durham Region Law Association and Peel Law Association, Nakul services clients across Ontario. Nakul serves clients fluent in English, Hindi, Urdu and Punjabi."
+      ],
       expertise: [
         "Immigration & Refugee Law",
         "Criminal Law & Defense",

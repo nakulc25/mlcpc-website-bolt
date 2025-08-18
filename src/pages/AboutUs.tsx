@@ -1,8 +1,17 @@
 import React from 'react';
-import { Scale, GraduationCap, Award, Briefcase } from 'lucide-react';
+import { Scale, Briefcase, Star, Quote } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 const AboutUs = () => {
+  const handleScheduleClick = () => {
+    if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
+      window.open(siteConfig.booking.calendlyUrl, '_blank');
+    } else {
+      // Fallback to contact section
+      window.location.href = '/#contact';
+    }
+  };
+
   return (
     <div className="pt-20">
       {/* Hero Section */}
@@ -30,13 +39,13 @@ const AboutUs = () => {
       </section>
 
       {/* Firm Overview */}
-      <section className="py-8 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
               {siteConfig.firm.name}
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base text-gray-600 max-w-3xl mx-auto leading-relaxed">
               {siteConfig.firm.description}. Our team combines decades of legal expertise with a 
               client-centered approach, ensuring that every case receives the attention and dedication it deserves. 
               We pride ourselves on building lasting relationships with our clients based on trust, transparency, and results.
@@ -46,16 +55,16 @@ const AboutUs = () => {
       </section>
 
       {/* Lawyers Profiles */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Legal Team</h2>
-            <p className="text-lg text-gray-600">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Legal Team</h2>
+            <p className="text-base text-gray-600">
               Experienced professionals committed to excellence in legal representation
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {siteConfig.lawyers.map((lawyer, index) => (
               <div 
                 key={lawyer.id} 
@@ -64,7 +73,7 @@ const AboutUs = () => {
               >
                 {/* Profile Header */}
                 <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 text-white text-center">
-                  <div className="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <div className="w-52 h-52 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img 
                       src={lawyer.image} 
                       alt={`${lawyer.name} - ${lawyer.title}`}
@@ -83,21 +92,9 @@ const AboutUs = () => {
                       <Briefcase className="w-5 h-5 mr-2 text-emerald-600" />
                       Professional Background
                     </h4>
-                    <p className="text-gray-600 leading-relaxed">{lawyer.background}</p>
-                  </div>
-
-                  {/* Certifications */}
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                      <Award className="w-5 h-5 mr-2 text-emerald-600" />
-                      Certifications & Memberships
-                    </h4>
-                    <div className="space-y-2">
-                      {lawyer.certifications.map((cert, idx) => (
-                        <div key={idx} className="flex items-center text-gray-600">
-                          <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3 flex-shrink-0"></div>
-                          <span>{cert}</span>
-                        </div>
+                    <div className="text-gray-600 leading-relaxed space-y-4">
+                      {lawyer.background.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
                       ))}
                     </div>
                   </div>
@@ -108,6 +105,48 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <p className="text-lg text-gray-600">
+              Trusted by clients across Toronto and the GTA
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {siteConfig.testimonials.map((testimonial, index) => (
+              <div 
+                key={testimonial.id}
+                className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center mb-4">
+                  <Quote className="w-8 h-8 text-emerald-600 mr-3" />
+                  <div className="flex">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
+                    ))}
+                  </div>
+                </div>
+                
+                <p className="text-gray-700 mb-6 leading-relaxed italic">
+                  "{testimonial.content}"
+                </p>
+                
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-sm text-gray-600">
+                    {testimonial.title}
+                    {testimonial.company && `, ${testimonial.company}`}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Call to Action */}
       <section className="py-16 bg-emerald-800 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -115,12 +154,12 @@ const AboutUs = () => {
           <p className="text-xl text-emerald-100 mb-8">
             Contact us today to schedule a consultation and discover how our experienced legal team can help you.
           </p>
-          <a 
-            href="/#contact"
+          <button 
+            onClick={handleScheduleClick}
             className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Schedule Consultation
-          </a>
+          </button>
         </div>
       </section>
     </div>
