@@ -64,7 +64,7 @@ export const siteConfig: SiteConfig = {
   firm: {
     name: "Mall & Chhibbar Legal Professional Corporation",
     shortName: "M&C",
-    tagline: "Protecting What Matters",
+    tagline: "",
     description: "Serving Toronto and the GTA"
   },
   contact: {
