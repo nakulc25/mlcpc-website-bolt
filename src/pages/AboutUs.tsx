@@ -64,7 +64,7 @@ const AboutUs = () => {
               >
                 {/* Profile Header */}
                 <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 text-white text-center">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img 
                       src={lawyer.image} 
                       alt={`${lawyer.name} - ${lawyer.title}`}
@@ -84,40 +84,6 @@ const AboutUs = () => {
                       Professional Background
                     </h4>
                     <p className="text-gray-600 leading-relaxed">{lawyer.background}</p>
-                    <div className="mt-4 p-4 bg-emerald-50 rounded-lg">
-                      <p className="text-emerald-800 font-medium">{lawyer.experience}</p>
-                    </div>
-                  </div>
-
-                  {/* Areas of Expertise */}
-                  <div className="mb-8">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                      <Scale className="w-5 h-5 mr-2 text-emerald-600" />
-                      Areas of Expertise
-                    </h4>
-                    <div className="grid grid-cols-1 gap-2">
-                      {lawyer.expertise.map((area, idx) => (
-                        <div key={idx} className="flex items-center text-gray-600">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></div>
-                          <span>{area}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Education */}
-                  <div className="mb-8">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                      <GraduationCap className="w-5 h-5 mr-2 text-emerald-600" />
-                      Education
-                    </h4>
-                    <div className="space-y-2">
-                      {lawyer.education.map((edu, idx) => (
-                        <div key={idx} className="text-gray-600 pl-4 border-l-2 border-emerald-200">
-                          {edu}
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
                   {/* Certifications */}
