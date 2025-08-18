@@ -50,7 +50,7 @@ export interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
   firm: {
-    name: "Mall & Chhibbar Legal Professional Corp.",
+    name: "Mall & Chhibbar Legal Professional Corporation",
     shortName: "M&C",
     tagline: "Protecting What Matters",
     description: "Professional legal services in Toronto and the GTA"
@@ -82,7 +82,7 @@ export const siteConfig: SiteConfig = {
     logoPath: "/Logo_Assets/logo_128x128.png",
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
-    subtitle: "Professional Corp.",
+    subtitle: "Professional Corporation",
     buttonText: "Schedule Consultation"
   },
   consultation: {
