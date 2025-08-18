@@ -2,7 +2,6 @@ export interface SiteConfig {
   firm: {
     name: string;
     shortName: string;
-    tagline: string;
     description: string;
   };
   contact: {
@@ -64,7 +63,6 @@ export const siteConfig: SiteConfig = {
   firm: {
     name: "Mall & Chhibbar Legal Professional Corporation",
     shortName: "M&C",
-    tagline: "",
     description: "Serving Toronto and the GTA"
   },
   contact: {
