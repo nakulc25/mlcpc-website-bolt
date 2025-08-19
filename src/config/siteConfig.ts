@@ -97,7 +97,7 @@ export const siteConfig: SiteConfig = {
     buttonText: "Schedule Consultation"
   },
   booking: {
-    calendlyUrl: "https://calendly.com/your-calendly-username/consultation",
+    calendlyUrl: "https://calendly.com/nakul-mclpc",
     enabled: true
   },
   consultation: {
