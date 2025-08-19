@@ -1,8 +1,10 @@
 import React from 'react';
-import { Scale, Briefcase, Star, Quote } from 'lucide-react';
+import { Scale, Briefcase, Star, Quote, Download, X } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 const AboutUs = () => {
+  const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+
   const handleScheduleClick = () => {
     if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
       window.open(siteConfig.booking.calendlyUrl, '_blank');
@@ -12,8 +14,25 @@ const AboutUs = () => {
     }
   };
 
+  const handleImageClick = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImage(null);
+  };
+
+  const handleDownloadCV = (cvFile: string, lawyerName: string) => {
+    const link = document.createElement('a');
+    link.href = cvFile;
+    link.download = `${lawyerName.replace(/\s+/g, '-').toLowerCase()}-cv.pdf`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <div className="pt-20">
+    <div className="pt-20 relative">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -73,11 +92,14 @@ const AboutUs = () => {
               >
                 {/* Profile Header */}
                 <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 text-white text-center">
-                  <div className="w-52 h-52 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <div 
+                    className="w-52 h-52 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+                    onClick={() => handleImageClick(lawyer.image)}
+                  >
                     <img 
                       src={lawyer.image} 
                       alt={`${lawyer.name} - ${lawyer.title}`}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover hover:opacity-90 transition-opacity duration-300"
                     />
                   </div>
                   <h3 className="text-2xl font-bold mb-2">{lawyer.name}</h3>
@@ -97,6 +119,17 @@ const AboutUs = () => {
                         <p key={idx}>{paragraph}</p>
                       ))}
                     </div>
+                  </div>
+
+                  {/* Download CV Button */}
+                  <div className="mt-6 pt-6 border-t border-gray-200">
+                    <button
+                      onClick={() => handleDownloadCV(lawyer.cvFile, lawyer.name)}
+                      className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                    >
+                      <Download className="w-5 h-5" />
+                      <span>Download CV</span>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -162,6 +195,29 @@ const AboutUs = () => {
           </button>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={handleCloseModal}
+        >
+          <div className="relative max-w-4xl max-h-full">
+            <button
+              onClick={handleCloseModal}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200"
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <img
+              src={selectedImage}
+              alt="Enlarged profile"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

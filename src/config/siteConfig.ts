@@ -56,6 +56,7 @@ export interface SiteConfig {
     education: string[];
     certifications: string[];
     experience: string;
+    cvFile: string;
   }[];
 }
 
@@ -160,7 +161,8 @@ export const siteConfig: SiteConfig = {
       certifications: [
        
       ],
-      experience: "15+ years of legal practice with a focus on achieving client-centered solutions through both litigation and alternative dispute resolution methods."
+      experience: "15+ years of legal practice with a focus on achieving client-centered solutions through both litigation and alternative dispute resolution methods.",
+      cvFile: "/data/henaa-mall-cv.pdf"
     },
     {
       id: "nakul-chhibbar",
@@ -192,7 +194,8 @@ export const siteConfig: SiteConfig = {
         "Immigration Consultant Certification - ICCRC",
         "Criminal Law Specialist Certification"
       ],
-      experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases."
+      experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases.",
+      cvFile: "/data/nakul-chhibbar-cv.pdf"
     }
   ]
 };
