@@ -102,7 +102,7 @@ export const siteConfig: SiteConfig = {
   },
   consultation: {
     urgentKeyword: "Urgent",
-    freeMinutes: 15,
+    freeMinutes: 30,
     description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases."
   },
   email: {
