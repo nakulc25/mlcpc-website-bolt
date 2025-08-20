@@ -7,6 +7,11 @@ import { siteConfig } from '../config/siteConfig';
 const PracticeAreaTemplate = () => {
   const { slug } = useParams<{ slug: string }>();
   
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
   if (!slug) {
     return <Navigate to="/" replace />;
   }
@@ -14,7 +19,7 @@ const PracticeAreaTemplate = () => {
   const practiceArea = getPracticeAreaBySlug(slug);
   
   if (!practiceArea) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/404" replace />;
   }
 
   const handleScheduleClick = () => {

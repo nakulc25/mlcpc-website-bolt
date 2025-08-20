@@ -17,6 +17,10 @@ const Services = () => {
     color: 'bg-emerald-700 hover:bg-emerald-800'
   }));
 
+  const handleServiceClick = () => {
+    // Scroll to top when navigating to practice area pages
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,6 +37,7 @@ const Services = () => {
               <Link
                 key={service.name}
                 to={`/practice-areas/${service.slug}`}
+                onClick={handleServiceClick}
                 className={`${service.color} text-white p-6 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex flex-col items-center space-y-3 group`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
