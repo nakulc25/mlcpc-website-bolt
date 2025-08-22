@@ -1,12 +1,16 @@
 import React from 'react';
 import { Scale, Briefcase, Star, Quote, Download, X } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import { isValidExternalUrl, isAuthorizedFile } from '../utils/security';
+import { logger } from '../utils/logger';
 
 const AboutUs = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
 
   const handleScheduleClick = () => {
-    if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
+    if (siteConfig.booking.enabled && 
+        siteConfig.booking.calendlyUrl && 
+        isValidExternalUrl(siteConfig.booking.calendlyUrl)) {
       window.open(siteConfig.booking.calendlyUrl, '_blank');
     } else {
       // Fallback to contact section
@@ -23,9 +27,27 @@ const AboutUs = () => {
   };
 
   const handleDownloadCV = (cvFile: string, lawyerName: string) => {
+    // Authorize file download
+    if (!isAuthorizedFile(cvFile)) {
+      logger.warn('Unauthorized file access attempt', { 
+        filePath: cvFile, 
+        lawyerName,
+        userAgent: navigator.userAgent,
+        timestamp: new Date().toISOString()
+      });
+      alert('Sorry, this file is not available for download.');
+      return;
+    }
+    
+    logger.info('CV download initiated', { 
+      filePath: cvFile, 
+      lawyerName 
+    });
+    
     const link = document.createElement('a');
     link.href = cvFile;
     link.download = `${lawyerName.replace(/\s+/g, '-').toLowerCase()}-cv.pdf`;
+    link.rel = 'noopener noreferrer';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

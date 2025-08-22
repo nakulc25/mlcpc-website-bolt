@@ -1,9 +1,12 @@
 import React from 'react';
 import { siteConfig } from '../config/siteConfig';
+import { isValidExternalUrl } from '../utils/security';
 
 const Hero = () => {
   const handleScheduleClick = () => {
-    if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
+    if (siteConfig.booking.enabled && 
+        siteConfig.booking.calendlyUrl && 
+        isValidExternalUrl(siteConfig.booking.calendlyUrl)) {
       window.open(siteConfig.booking.calendlyUrl, '_blank');
     } else {
       // Fallback to contact section

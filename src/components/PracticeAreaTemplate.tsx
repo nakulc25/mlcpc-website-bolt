@@ -3,6 +3,7 @@ import { useParams, Navigate } from 'react-router-dom';
 import { ArrowLeft, CheckCircle, Star, Phone, Mail } from 'lucide-react';
 import { getPracticeAreaBySlug } from '../config/practiceAreas';
 import { siteConfig } from '../config/siteConfig';
+import { isValidExternalUrl } from '../utils/security';
 
 const PracticeAreaTemplate = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -23,7 +24,9 @@ const PracticeAreaTemplate = () => {
   }
 
   const handleScheduleClick = () => {
-    if (siteConfig.booking.enabled && siteConfig.booking.calendlyUrl) {
+    if (siteConfig.booking.enabled && 
+        siteConfig.booking.calendlyUrl && 
+        isValidExternalUrl(siteConfig.booking.calendlyUrl)) {
       window.open(siteConfig.booking.calendlyUrl, '_blank');
     } else {
       window.location.href = '/#contact';

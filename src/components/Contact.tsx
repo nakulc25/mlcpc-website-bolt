@@ -2,12 +2,25 @@ import React, { useState } from 'react';
 import { Clock, CheckCircle, Send, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { siteConfig } from '../config/siteConfig';
+import { 
+  sanitizeInput, 
+  isValidEmail, 
+  isValidName, 
+  isValidMessage,
+  contactFormRateLimiter 
+} from '../utils/security';
+import { logger } from '../utils/logger';
 
 interface FormStatus {
   type: 'idle' | 'loading' | 'success' | 'error';
   message: string;
 }
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -21,22 +34,68 @@ const Contact = () => {
     message: ''
   });
 
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
+
+  const validateForm = (): boolean => {
+    const errors: FormErrors = {};
+    
+    if (!isValidName(formData.name)) {
+      errors.name = 'Name must contain only letters, spaces, hyphens, and apostrophes (1-100 characters)';
+    }
+    
+    if (!isValidEmail(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
+    
+    if (!isValidMessage(formData.message)) {
+      errors.message = 'Message must be between 10 and 5000 characters';
+    }
+    
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form
+    if (!validateForm()) {
+      setFormStatus({
+        type: 'error',
+        message: 'Please correct the errors below and try again.'
+      });
+      return;
+    }
+    
+    // Rate limiting check
+    if (!contactFormRateLimiter.isAllowed('contact-form')) {
+      setFormStatus({
+        type: 'error',
+        message: 'Too many attempts. Please wait 5 minutes before trying again.'
+      });
+      return;
+    }
     
     setFormStatus({ type: 'loading', message: 'Sending message...' });
     
     try {
+      // Sanitize all inputs
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        message: sanitizeInput(formData.message),
+        urgent: formData.urgent
+      };
+      
       // Prepare template parameters for EmailJS
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
+        from_name: sanitizedData.name,
+        from_email: sanitizedData.email,
+        message: sanitizedData.message,
         to_email: siteConfig.email.toEmail,
-        urgent: formData.urgent ? 'Yes - URGENT' : 'No',
-        subject: formData.urgent 
-          ? `URGENT: New Contact Form Submission from ${formData.name}`
-          : `New Contact Form Submission from ${formData.name}`
+        urgent: sanitizedData.urgent ? 'Yes - URGENT' : 'No',
+        subject: sanitizedData.urgent 
+          ? `URGENT: New Contact Form Submission from ${sanitizedData.name}`
+          : `New Contact Form Submission from ${sanitizedData.name}`
       };
 
       // Send email using EmailJS
@@ -60,8 +119,13 @@ const Contact = () => {
         urgent: false
       });
       
+      // Clear errors
+      setFormErrors({});
+      
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      logger.error('Failed to send contact form email', error as Error, {
+        formData: { name: sanitizedData.name, email: sanitizedData.email, urgent: sanitizedData.urgent }
+      });
       setFormStatus({
         type: 'error',
         message: 'Failed to send message. Please try again or contact us directly.'
@@ -71,6 +135,15 @@ const Contact = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
+    
+    // Clear specific field error when user starts typing
+    if (formErrors[name as keyof FormErrors]) {
+      setFormErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
+    
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? (e.target as HTMLInputElement).checked : value
@@ -125,9 +198,14 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 ${
+                    formErrors.name ? 'border-red-500' : 'border-yellow-500'
+                  }`}
                   disabled={formStatus.type === 'loading'}
                 />
+                {formErrors.name && (
+                  <p className="mt-1 text-sm text-red-600">{formErrors.name}</p>
+                )}
               </div>
               
               <div>
@@ -141,9 +219,14 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 ${
+                    formErrors.email ? 'border-red-500' : 'border-yellow-500'
+                  }`}
                   disabled={formStatus.type === 'loading'}
                 />
+                {formErrors.email && (
+                  <p className="mt-1 text-sm text-red-600">{formErrors.email}</p>
+                )}
               </div>
               
               <div>
@@ -157,9 +240,14 @@ const Contact = () => {
                   onChange={handleChange}
                   rows={6}
                   required
-                  className="w-full px-4 py-3 border-2 border-yellow-500 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 resize-vertical"
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 resize-vertical ${
+                    formErrors.message ? 'border-red-500' : 'border-yellow-500'
+                  }`}
                   disabled={formStatus.type === 'loading'}
                 />
+                {formErrors.message && (
+                  <p className="mt-1 text-sm text-red-600">{formErrors.message}</p>
+                )}
               </div>
               
               <div className="flex items-center space-x-3">

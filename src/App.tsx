@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import PracticeAreaTemplate from './components/PracticeAreaTemplate';
 import Footer from './components/Footer';
 import EmailSetup from './components/EmailSetup';
+import ErrorBoundary from './components/ErrorBoundary';
 import { siteConfig } from './config/siteConfig';
 import { analyticsConfig, initializeGTM } from './config/analytics';
 
@@ -24,15 +25,19 @@ function App() {
   return (
     <div className="min-h-screen">
       {!isEmailConfigured && <EmailSetup />}
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/practice-areas/:slug" element={<PracticeAreaTemplate />} />
-        <Route path="/404" element={<NotFound />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+      <ErrorBoundary>
+        <Header />
+        <ErrorBoundary>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/practice-areas/:slug" element={<PracticeAreaTemplate />} />
+            <Route path="/404" element={<NotFound />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ErrorBoundary>
+        <Footer />
+      </ErrorBoundary>
     </div>
   );
 }
