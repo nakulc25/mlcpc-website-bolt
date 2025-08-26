@@ -159,7 +159,7 @@ export const siteConfig: SiteConfig = {
        
       ],
       experience: "15+ years of legal practice with a focus on achieving client-centered solutions through both litigation and alternative dispute resolution methods.",
-      linkedinUrl: "https://www.linkedin.com/in/henaa-mall"
+      linkedinUrl: "https://www.linkedin.com/in/henaamall"
     },
     {
       id: "nakul-chhibbar",
@@ -192,7 +192,7 @@ export const siteConfig: SiteConfig = {
         "Criminal Law Specialist Certification"
       ],
       experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases.",
-      linkedinUrl: "https://www.linkedin.com/in/nakul-chhibbar"
+      linkedinUrl: "https://www.linkedin.com/in/nakul-chhibbar-332414136"
     }
   ]
 };
