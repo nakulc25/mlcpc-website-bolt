@@ -58,8 +58,8 @@ const AboutUs = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-2xl md:text-4xl font-bold mb-6">About Our Firm</h1>
-          <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">About Our Firm</h1>
+          <p className="text-xl md:text-1xl text-emerald-100 max-w-3xl mx-auto">
             We pride ourselves on building lasting relationships with our clients based on trust, transparency, and results
           </p>
         </div>
