@@ -65,76 +65,8 @@ const AboutUs = () => {
       */}
 
 
-      {/* Lawyers Profiles */}
-<section className="py-6 bg-gray-50">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="text-center mb-6">
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Legal Team</h2>
-      <p className="text-base text-gray-600">
-        Experienced professionals committed to excellence in legal representation.
-      </p>
-      <p className="text-base text-gray-600">
-        Serving clients across Toronto and the GTA
-      </p>
-    </div>
-
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {siteConfig.lawyers.map((lawyer, index) => (
-        <div
-          key={lawyer.id}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
-          style={{ animationDelay: `${index * 0.2}s` }}
-        >
-          {/* Profile Header */}
-          <div className="bg-gradient-to-r from-emerald-700 to-emerald-800 p-8 text-white text-center">
-            <div
-              className="w-52 h-52 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-              onClick={() => handleImageClick(lawyer.image)}
-            >
-              <img
-                src={lawyer.image}
-                alt={`${lawyer.name} - ${lawyer.title}`}
-                className="w-full h-full object-cover hover:opacity-90 transition-opacity duration-300"
-              />
-            </div>
-            <h3 className="text-2xl font-bold mb-2">{lawyer.name}</h3>
-            <p className="text-emerald-100 text-lg">{lawyer.title}</p>
-          </div>
-
-          {/* Profile Content */}
-          <div className="p-8 flex flex-col flex-grow">
-            {/* Background */}
-            <div className="mb-8 flex-grow">
-              <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                <Briefcase className="w-5 h-5 mr-2 text-emerald-600" />
-                Professional Background
-              </h4>
-              <div className="text-gray-600 leading-relaxed space-y-4">
-                {lawyer.background.map((paragraph, idx) => (
-                  <p key={idx}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
-
-            {/* LinkedIn Button */}
-            <div className="mt-auto pt-6 border-t border-gray-200">
-              <button
-                onClick={() => handleLinkedInClick(lawyer.linkedinUrl, lawyer.name)}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
-              >
-                <Linkedin className="w-5 h-5" />
-                <span>View LinkedIn Profile</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
       
-      {/* Lawyers Profiles 
+      {/* Lawyers Profiles */}
       <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
@@ -201,7 +133,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      */}
+      
 
       {/* Testimonials Section */}
       <section className="py-16 bg-white">
