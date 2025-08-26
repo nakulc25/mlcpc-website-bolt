@@ -94,7 +94,7 @@ export const siteConfig: SiteConfig = {
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
     subtitle: "Professional Corporation",
-    buttonText: "Schedule Consultation"
+    buttonText: "Schedule a Consultation"
   },
   booking: {
     calendlyUrl: "https://calendly.com/nakul-mclpc",
