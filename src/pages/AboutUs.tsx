@@ -74,7 +74,7 @@ const AboutUs = () => {
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Our Firm</h1>
           <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">
-            Meet the experienced legal professionals dedicated to protecting what matters most to you
+            We pride ourselves on building lasting relationships with our clients based on trust, transparency, and results
           </p>
         </div>
       </section>
