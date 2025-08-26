@@ -147,7 +147,7 @@ const PracticeAreaTemplate = () => {
               </button>
 
               <p className="text-sm text-emerald-100 mt-4 text-center">
-                First {siteConfig.consultation.freeMinutes} minutes free
+                Free {siteConfig.consultation.freeMinutes}-minute Consultation
               </p>
             </div>
 
