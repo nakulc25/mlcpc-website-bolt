@@ -114,17 +114,17 @@ export const siteConfig: SiteConfig = {
   testimonials: [
     {
       id: "testimonial-1",
-      name: "Sarah Johnson",
-      title: "Business Owner",
-      company: "Johnson Enterprises",
-      content: "Mall & Chhibbar provided exceptional legal guidance during our business acquisition. Their attention to detail and professional approach made a complex process seamless.",
+      name: "Mary Kay McCoy",
+      title: "Broker",
+      company: "Century 21 Miller Real Estate Ltd",
+      content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients",
       rating: 5
     },
     {
       id: "testimonial-2",
-      name: "Michael Chen",
-      title: "Real Estate Investor",
-      content: "Outstanding service in handling our real estate transactions. The team was responsive, knowledgeable, and always kept our best interests in mind.",
+      name: "Mujtaba Choudhry",
+      title: "",
+      content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding.",
       rating: 5
     },
     {
