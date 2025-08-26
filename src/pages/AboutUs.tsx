@@ -214,7 +214,7 @@ const AboutUs = () => {
             onClick={handleScheduleClick}
             className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            Schedule a Consultation
+            Free 30-minute Consultation
           </button>
         </div>
       </section>
