@@ -171,7 +171,8 @@ export const siteConfig: SiteConfig = {
         "Nakul's approach reflects his belief that law, like fitness, requires discipline, adaptability and commitment to excellence. When not advocating for clients, he trains with the same focus he brings to the courtroom, often accompanied by his loyal dog Bravo.",
         "At Mall & Chhibbar, Nakul has built a practice that mirrors his values: integrity in every action, diligence in every case, and personalized attention for every client. He navigates complex legal challenges with clarity and determination, transforming obstacles into favorable outcomes.",
         "An active member of the Durham Region Law Association and Peel Law Association, Nakul services clients across Ontario.",
-        "Nakul serves clients fluent in English, Hindi, Urdu and Punjabi."
+        "Nakul serves clients fluent in English, Hindi, Urdu and Punjabi.",
+        ""
       ],
       expertise: [
         "Immigration & Refugee Law",
