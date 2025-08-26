@@ -143,7 +143,7 @@ const PracticeAreaTemplate = () => {
                 onClick={handleScheduleClick}
                 className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
-                Schedule Consultation
+                Schedule a Consultation
               </button>
 
               <p className="text-sm text-emerald-100 mt-4 text-center">
@@ -183,7 +183,7 @@ const PracticeAreaTemplate = () => {
               onClick={handleScheduleClick}
               className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              Schedule Consultation
+              Schedule a Consultation
             </button>
             <a
               href="/#contact"
