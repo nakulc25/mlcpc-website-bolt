@@ -56,7 +56,7 @@ const AboutUs = () => {
   return (
     <div className="pt-20 relative">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-20">
+      <section className="bg-gradient-to-r from-emerald-800 to-emerald-900 text-white py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Our Firm</h1>
           <p className="text-xl md:text-2xl text-emerald-100 max-w-3xl mx-auto">
