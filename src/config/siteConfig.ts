@@ -172,6 +172,7 @@ export const siteConfig: SiteConfig = {
         "At Mall & Chhibbar, Nakul has built a practice that mirrors his values: integrity in every action, diligence in every case, and personalized attention for every client. He navigates complex legal challenges with clarity and determination, transforming obstacles into favorable outcomes.",
         "An active member of the Durham Region Law Association and Peel Law Association, Nakul services clients across Ontario.",
         "Nakul serves clients fluent in English, Hindi, Urdu and Punjabi.",
+        "",
         ""
       ],
       expertise: [
