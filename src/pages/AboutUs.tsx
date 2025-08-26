@@ -1,8 +1,7 @@
 import React from 'react';
-import { Scale, Briefcase, Quote, Download, X, CheckCircle2 } from 'lucide-react';
+import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
-import { isValidExternalUrl, isAuthorizedFile } from '../utils/security';
-import { logger } from '../utils/logger';
+import { isValidExternalUrl } from '../utils/security';
 
 const AboutUs = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
@@ -26,31 +25,13 @@ const AboutUs = () => {
     setSelectedImage(null);
   };
 
-  const handleDownloadCV = (cvFile: string, lawyerName: string) => {
-    // Authorize file download
-    if (!isAuthorizedFile(cvFile)) {
-      logger.warn('Unauthorized file access attempt', { 
-        filePath: cvFile, 
-        lawyerName,
-        userAgent: navigator.userAgent,
-        timestamp: new Date().toISOString()
-      });
-      alert('Sorry, this file is not available for download.');
-      return;
+  const handleLinkedInClick = (linkedinUrl: string, lawyerName: string) => {
+    if (isValidExternalUrl(linkedinUrl)) {
+      window.open(linkedinUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      console.warn('Invalid LinkedIn URL:', linkedinUrl);
+      alert('LinkedIn profile is not available at this time.');
     }
-    
-    logger.info('CV download initiated', { 
-      filePath: cvFile, 
-      lawyerName 
-    });
-    
-    const link = document.createElement('a');
-    link.href = cvFile;
-    link.download = `${lawyerName.replace(/\s+/g, '-').toLowerCase()}-cv.pdf`;
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
   };
 
   return (
@@ -134,14 +115,14 @@ const AboutUs = () => {
                     </div>
                   </div>
 
-                  {/* Download CV Button */}
+                  {/* LinkedIn Button */}
                   <div className="mt-6 pt-6 border-t border-gray-200">
                     <button
-                      onClick={() => handleDownloadCV(lawyer.cvFile, lawyer.name)}
-                      className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                      onClick={() => handleLinkedInClick(lawyer.linkedinUrl, lawyer.name)}
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
                     >
-                      <Download className="w-5 h-5" />
-                      <span>Download CV</span>
+                      <Linkedin className="w-5 h-5" />
+                      <span>View LinkedIn Profile</span>
                     </button>
                   </div>
                 </div>

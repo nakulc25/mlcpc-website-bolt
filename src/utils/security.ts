@@ -42,7 +42,9 @@ export const isValidExternalUrl = (url: string): boolean => {
     'calendly.com',
     'mclpc.ca',
     'www.calendly.com',
-    'www.mclpc.ca'
+    'www.mclpc.ca',
+    'linkedin.com',
+    'www.linkedin.com'
   ];
   
   try {
