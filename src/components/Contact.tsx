@@ -300,7 +300,7 @@ const Contact = () => {
                 </div>
                 
                 <div className="bg-emerald-600 p-4 rounded-lg text-center">
-                  <p className="text-lg font-semibold">First {siteConfig.consultation.freeMinutes} min. free!</p>
+                  <p className="text-lg font-semibold">Free {siteConfig.consultation.freeMinutes}-minute Consultation</p>
                 </div>
                 
                 <div className="text-sm text-emerald-100">
