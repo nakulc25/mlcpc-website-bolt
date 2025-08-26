@@ -89,7 +89,8 @@ export const siteConfig: SiteConfig = {
     "Criminal Law"
   ],
   hero: {
-    backgroundImage: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop",
+    backgroundImage: "/data/HomeBanner-1.jpg",
+    backgroundImage1: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop",
     logoPath: "/Logo_Assets/logo_128x128.png",
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
