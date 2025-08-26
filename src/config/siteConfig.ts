@@ -44,7 +44,6 @@ export interface SiteConfig {
     title: string;
     company?: string;
     content: string;
-    rating: number;
   }[];
   lawyers: {
     id: string;
@@ -118,22 +117,19 @@ export const siteConfig: SiteConfig = {
       name: "Mary Kay McCoy",
       title: "Broker",
       company: "Century 21 Miller Real Estate Ltd",
-      content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients",
-      rating: 5
+      content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients"
     },
     {
       id: "testimonial-2",
       name: "Mujtaba Choudhry",
       title: "",
-      content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding.",
-      rating: 5
+      content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding."
     },
     {
       id: "testimonial-3",
       name: "Lisa Rodriguez",
       title: "Family Law Client",
-      content: "During a difficult family situation, they provided compassionate yet strong legal representation. I couldn't have asked for better advocates.",
-      rating: 5
+      content: "During a difficult family situation, they provided compassionate yet strong legal representation. I couldn't have asked for better advocates."
     }
   ],
   lawyers: [

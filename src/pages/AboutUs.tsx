@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scale, Briefcase, Star, Quote, Download, X } from 'lucide-react';
+import { Scale, Briefcase, Quote, Download, X, CheckCircle2 } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { isValidExternalUrl, isAuthorizedFile } from '../utils/security';
 import { logger } from '../utils/logger';
@@ -177,12 +177,13 @@ const AboutUs = () => {
                 className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="flex items-center mb-4">
-                  <Quote className="w-8 h-8 text-emerald-600 mr-3" />
-                  <div className="flex">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-500 fill-current" />
-                    ))}
+                <div className="flex items-center justify-between mb-4">
+                  <Quote className="w-8 h-8 text-emerald-600" />
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                    <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                      Verified Client
+                    </span>
                   </div>
                 </div>
                 
