@@ -428,14 +428,14 @@ export const practiceAreas: PracticeArea[] = [
     shortDescription: "Experienced criminal defense representation for all types of charges.",
     bannerImage: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
-      overview: "Criminal charges can have serious consequences for your freedom, reputation, and future. Our criminal law team provides aggressive defense representation while protecting your rights throughout the legal process.",
+      overview: "Criminal charges can have serious consequences for your freedom, reputation, and future. Our team provides defense representation while protecting your rights throughout the legal process.",
       sections: [
         {
           title: "Criminal Defense",
           content: [
             "Every person accused of a crime deserves a strong defense and protection of their rights.",
             "We handle all types of criminal charges from summary offenses to serious indictable matters.",
-            "Our team provides strategic defense planning and aggressive representation in court."
+            "Our team provides strategic defense planning and in court."
           ]
         },
         {
@@ -466,10 +466,7 @@ export const practiceAreas: PracticeArea[] = [
         "Youth criminal matters"
       ],
       whyChooseUs: [
-        "Experienced criminal defense lawyers",
-        "Aggressive representation in court",
         "24/7 availability for urgent matters",
-        "Strong track record of successful defenses",
         "Compassionate support during difficult times"
       ]
     },
