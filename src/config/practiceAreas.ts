@@ -55,11 +55,11 @@ export const practiceAreas: PracticeArea[] = [
           ]
         },
         {
-          title: "Indian Canadian Overlap",
+          title: "Family Law Across Borders",
           content: [
-            "Parenting Time & Decision Making Responsibility require careful consideration of the best interests of the child.",
-            "We help parents develop parenting plans that work for their unique family situation.",
-            "Our team has extensive experience with complex custody matters and international child abduction cases."
+            "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
+            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, support, and property matters.",
+            "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
           ]
         }
       ],
