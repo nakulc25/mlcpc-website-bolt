@@ -91,7 +91,7 @@ export const practiceAreas: PracticeArea[] = [
     shortDescription: "Complete real estate legal services for residential and commercial transactions.",
     bannerImage: "https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
-      overview: "Real estate transactions represent significant investments that require careful legal attention. Our real estate team provides comprehensive legal services to ensure your property transactions proceed smoothly and your interests are protected.",
+      overview: "Real estate transactions represent significant investments that require careful legal attention. Our real estate team provides legal services to ensure your property transactions proceed smoothly and your interests are protected.",
       sections: [
         {
           title: "Residential Real Estate",
@@ -129,7 +129,6 @@ export const practiceAreas: PracticeArea[] = [
         "Landlord and tenant matters"
       ],
       whyChooseUs: [
-        "Extensive experience in GTA real estate market",
         "Strong relationships with real estate professionals",
         "Efficient transaction processing",
         "Competitive legal fees",
