@@ -450,8 +450,7 @@ export const practiceAreas: PracticeArea[] = [
           title: "Appeals",
           content: [
             "If you have been convicted, you may have grounds for appeal.",
-            "We handle appeals to higher courts and seek to overturn wrongful convictions.",
-            "Our team has experience with complex appellate matters and procedural issues."
+            "We handle appeals to higher courts and seek to overturn wrongful convictions."
           ]
         }
       ],
