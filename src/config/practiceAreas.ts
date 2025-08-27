@@ -53,6 +53,14 @@ export const practiceAreas: PracticeArea[] = [
             "We ensure all support arrangements are fair and comply with current guidelines.",
             "Our team handles support variations, enforcement, and international support matters."
           ]
+        },
+        {
+          title: "Indian Canadian Overlap",
+          content: [
+            "Parenting Time & Decision Making Responsibility require careful consideration of the best interests of the child.",
+            "We help parents develop parenting plans that work for their unique family situation.",
+            "Our team has extensive experience with complex custody matters and international child abduction cases."
+          ]
         }
       ],
       keyServices: [
