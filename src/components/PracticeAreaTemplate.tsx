@@ -143,7 +143,6 @@ const PracticeAreaTemplate = () => {
                 onClick={handleScheduleClick}
                 className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105"
               >
-                Free 30-minute Consultation
               </button>
 
               <p className="text-sm text-emerald-100 mt-4 text-center">
