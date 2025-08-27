@@ -28,7 +28,7 @@ export const practiceAreas: PracticeArea[] = [
     shortDescription: "Compassionate legal support for family matters including divorce, custody, and support issues.",
     bannerImage: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
-      overview: "Family law matters are deeply personal and emotionally challenging. Our experienced family law team provides compassionate, strategic legal representation while protecting your interests and those of your children.",
+      overview: "Family law matters are deeply personal and emotionally challenging. Our family law team provides compassionate, strategic legal representation while protecting your interests and those of your children.",
       sections: [
         {
           title: "Divorce & Separation",
@@ -39,9 +39,9 @@ export const practiceAreas: PracticeArea[] = [
           ]
         },
         {
-          title: "Child Custody & Access",
+          title: "Parenting Time & Decision Making Responsibility",
           content: [
-            "Child custody arrangements require careful consideration of the best interests of the child.",
+            "Parenting Time & Decision Making Responsibility require careful consideration of the best interests of the child.",
             "We help parents develop parenting plans that work for their unique family situation.",
             "Our team has extensive experience with complex custody matters and international child abduction cases."
           ]
@@ -58,20 +58,17 @@ export const practiceAreas: PracticeArea[] = [
       keyServices: [
         "Divorce proceedings",
         "Separation agreements",
-        "Child custody and access",
+        "Parenting Time & Decision Making Responsibility",
         "Child and spousal support",
-        "Property division",
+        "Equalization Claims",
         "Adoption proceedings",
         "Domestic contracts",
         "Family mediation"
       ],
       whyChooseUs: [
-        "Over 15 years of combined family law experience",
         "Compassionate approach to sensitive family matters",
-        "Strong track record in complex custody cases",
-        "Multilingual services available",
-        "Collaborative law and mediation options"
-      ]
+        "Multilingual services available"
+        ]
     },
     seo: {
       title: "Family Law Services Toronto | Mall & Chhibbar Legal",
