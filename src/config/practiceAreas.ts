@@ -159,15 +159,7 @@ export const practiceAreas: PracticeArea[] = [
             "Our approach focuses on protecting business interests while seeking practical solutions."
           ]
         },
-        {
-          title: "Personal Injury",
-          content: [
-            "Personal injury cases require immediate attention and experienced representation.",
-            "We handle motor vehicle accidents, slip and fall cases, and other injury claims.",
-            "Our team works with medical experts and investigators to build strong cases."
-          ]
-        },
-        {
+       {
           title: "Employment Disputes",
           content: [
             "Workplace disputes affect both employers and employees significantly.",
@@ -178,7 +170,6 @@ export const practiceAreas: PracticeArea[] = [
       ],
       keyServices: [
         "Contract disputes",
-        "Personal injury claims",
         "Employment litigation",
         "Construction disputes",
         "Professional negligence",
@@ -189,8 +180,7 @@ export const practiceAreas: PracticeArea[] = [
       whyChooseUs: [
         "Proven track record in complex litigation",
         "Strategic approach to dispute resolution",
-        "Experienced trial lawyers",
-        "Alternative dispute resolution expertise",
+        "Alternative dispute resolution",
         "Cost-effective litigation strategies"
       ]
     },
