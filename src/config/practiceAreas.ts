@@ -369,8 +369,15 @@ export const practiceAreas: PracticeArea[] = [
     shortDescription: "Comprehensive immigration services for individuals and families.",
     bannerImage: "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
-      overview: "Immigration law is complex and constantly evolving. Our immigration team provides comprehensive services to help individuals and families navigate the Canadian immigration system and achieve their goals of living and working in Canada.",
+      overview: "Immigration law is complex and constantly evolving. Our immigration team provides services to help individuals and families navigate the Canadian immigration system and achieve their goals of living and working in Canada.",
       sections: [
+        {
+          title: "Business Immigration",
+          content: [
+            "Canada offers various programs for business immigrants and investors.",
+            "We assist with start-up visas, self-employed persons, and investor programs."
+          ]
+        },
         {
           title: "Permanent Residence",
           content: [
@@ -386,14 +393,6 @@ export const practiceAreas: PracticeArea[] = [
             "We assist with sponsoring spouses, children, parents, and grandparents.",
             "Our team ensures all requirements are met and applications are properly prepared."
           ]
-        },
-        {
-          title: "Business Immigration",
-          content: [
-            "Canada offers various programs for business immigrants and investors.",
-            "We assist with start-up visas, self-employed persons, and investor programs.",
-            "Our team has experience with complex business immigration matters."
-          ]
         }
       ],
       keyServices: [
@@ -404,13 +403,15 @@ export const practiceAreas: PracticeArea[] = [
         "Study permits",
         "Business immigration",
         "Citizenship applications",
-        "Immigration appeals"
+        "Immigration appeals",
+        "Judicial Review",
+        "Mandamus",
+        "Refugee claims",
+        "Appeals from Immigration Appeals Divisions"
       ],
       whyChooseUs: [
-        "Comprehensive immigration law expertise",
         "Multilingual services available",
         "Strong success rate with applications",
-        "Experience with complex cases",
         "Ongoing support throughout the process"
       ]
     },
