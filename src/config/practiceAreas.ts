@@ -303,9 +303,7 @@ export const practiceAreas: PracticeArea[] = [
         "Estate disputes"
       ],
       whyChooseUs: [
-        "Comprehensive estate planning expertise",
         "Compassionate approach to sensitive matters",
-        "Experience with complex estates",
         "Tax-efficient planning strategies",
         "Ongoing support for families"
       ]
