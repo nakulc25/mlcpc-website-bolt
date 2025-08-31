@@ -73,10 +73,7 @@ const AboutUs = () => {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Our Legal Team</h2>
             <p className="text-base text-gray-600">
               Experienced professionals committed to excellence in legal representation.
-            </p>
-            <p className="text-base text-gray-600">
-              Serving clients across Toronto and the GTA
-            </p>            
+            </p>        
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
