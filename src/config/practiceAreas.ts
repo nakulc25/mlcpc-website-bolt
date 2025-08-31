@@ -31,6 +31,14 @@ export const practiceAreas: PracticeArea[] = [
       overview: "Family law matters are deeply personal and emotionally challenging. Our family law team provides compassionate, strategic legal representation while protecting your interests and those of your children.",
       sections: [
         {
+          title: "Family Law Across Borders",
+          content: [
+            "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
+            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, support, and property matters.",
+            "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
+          ]
+        },
+        {
           title: "Divorce & Separation",
           content: [
             "We guide clients through all aspects of divorce proceedings, from initial separation agreements to final divorce orders.",
@@ -52,14 +60,6 @@ export const practiceAreas: PracticeArea[] = [
             "Child support and spousal support calculations require detailed financial analysis.",
             "We ensure all support arrangements are fair and comply with current guidelines.",
             "Our team handles support variations, enforcement, and international support matters."
-          ]
-        },
-        {
-          title: "Family Law Across Borders",
-          content: [
-            "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
-            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, support, and property matters.",
-            "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
           ]
         }
       ],
