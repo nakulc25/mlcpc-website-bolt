@@ -127,9 +127,9 @@ export const siteConfig: SiteConfig = {
     },
     {
       id: "testimonial-3",
-      name: "Lisa Rodriguez",
-      title: "Family Law Client",
-      content: "During a difficult family situation, they provided compassionate yet strong legal representation. I couldn't have asked for better advocates."
+      name: "Joana Sanchez",
+      title: "Real Estate Broker",
+      content: "What impressed me the most about this firm is their attention to detail, responsiveness, and genuine commitment to ensuring I felt informed and confident every step of the way."
     }
   ],
   lawyers: [
