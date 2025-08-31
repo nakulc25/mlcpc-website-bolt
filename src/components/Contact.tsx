@@ -290,7 +290,7 @@ const Contact = () => {
             <div className="bg-emerald-700 text-white p-8 rounded-lg shadow-lg">
               <div className="text-center mb-6">
                 <Clock className="w-12 h-12 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Looking for immediate consultation?</h3>
+                <h3 className="text-xl font-bold mb-2">Looking for consultation?</h3>
               </div>
               
               <div className="space-y-4">
