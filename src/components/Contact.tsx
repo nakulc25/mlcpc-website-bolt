@@ -293,9 +293,10 @@ const Contact = () => {
                 <h3 className="text-xl font-bold mb-2">Looking for consultation?</h3>
               </div>
 
-              {/*
+              
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
+              {/*
+              <div className="flex items-start space-x-3">
                   <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                   <span>Include <strong>"{siteConfig.consultation.urgentKeyword}"</strong> in the message.</span>
                 </div>
