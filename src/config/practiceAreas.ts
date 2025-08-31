@@ -65,16 +65,18 @@ export const practiceAreas: PracticeArea[] = [
       ],
       keyServices: [
         "Divorce proceedings",
+        "Foreign Divorces",
         "Separation agreements",
         "Parenting Time & Decision Making Responsibility",
         "Child and spousal support",
         "Equalization Claims",
-        "Adoption proceedings",
         "Domestic contracts",
         "Family mediation"
       ],
       whyChooseUs: [
+        "Extensive Experience in cross-border litigation",
         "Compassionate approach to sensitive family matters",
+        "Cultural Competency",
         "Multilingual services available"
         ]
     },
