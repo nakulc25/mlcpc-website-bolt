@@ -78,13 +78,13 @@ export const siteConfig: SiteConfig = {
     fax: "(437) 848-4514"
   },
   services: [
-    "Family Law",
-    "Wills & Estates", 
     "Civil Litigation",
-    "Real Estate",
-    "Business Law",
     "Employment Law",
-    "Immigration",
+    "Wills & Estates",
+    "Family Law",
+    "Real Estate Law",
+    "Immigration Law",
+    "Business Law",
     "Criminal Law"
   ],
   hero: {
