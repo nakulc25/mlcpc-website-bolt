@@ -58,8 +58,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Fax className="w-5 h-5 flex-shrink-0" />
                 <div>
-                  <p>Fax:</p>
-                  <p className="text-sm">{siteConfig.contact.fax}</p>
+                  <p>Fax: {siteConfig.contact.fax}</p>
                 </div>
               </div>
             </div>
