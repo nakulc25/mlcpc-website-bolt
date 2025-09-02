@@ -121,14 +121,14 @@ export const practiceAreas: PracticeArea[] = [
         }
       ],
       keyServices: [
-        "Residential purchases and sales",
-        "Commercial real estate transactions",
-        "Mortgage and refinancing",
-        "Title searches and insurance",
-        "Condominium transactions",
-        "New construction purchases",
-        "Real estate litigation",
-        "Landlord and tenant matters"
+"Residential Real Estate Transactions",
+"Commercial Real Estate Transactions",
+"Leases",
+"Mortgages",
+"Refinancing",
+"Real Rstate Litigation",
+"Professional Discipline",
+"Construction Liens"
       ],
       whyChooseUs: [
         "Strong relationships with real estate professionals",
