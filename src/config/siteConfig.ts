@@ -57,6 +57,19 @@ export interface SiteConfig {
     experience: string;
     linkedinUrl: string;
   }[];
+  pets: {
+    id: string;
+    name: string;
+    role: string;
+    image: string;
+    description: string;
+    personality: string[];
+  }[];
+  testimonialCarousel: {
+    autoAdvanceDelay: number; // in milliseconds
+    showDots: boolean;
+    showArrows: boolean;
+  };
 }
 
 export const siteConfig: SiteConfig = {
@@ -196,5 +209,29 @@ export const siteConfig: SiteConfig = {
       experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases.",
       linkedinUrl: "https://www.linkedin.com/in/nakul-chhibbar-332414136"
     }
+  ],
+  pets: [
+    {
+      id: "bravo",
+      name: "Bravo",
+      role: "Chief Morale Officer",
+      image: "https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      description: "Bravo is Nakul's loyal companion and our office's unofficial stress-relief specialist.",
+      personality: ["Loyal", "Energetic", "Great Listener", "Treat Enthusiast"]
+    },
+    {
+      id: "office-cats",
+      name: "The Office Cats",
+      role: "Emotional Support Team",
+      image: "https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      description: "Henaa's feline companions who provide comfort and companionship during long work days.",
+      personality: ["Independent", "Calming Presence", "Excellent Judges of Character", "Purr Therapists"]
+    }
+  ],
+  testimonialCarousel: {
+    autoAdvanceDelay: 5000, // 5 seconds
+    showDots: true,
+    showArrows: true
+  }
   ]
 };

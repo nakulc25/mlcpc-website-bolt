@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield } from 'lucide-react';
+import { DollarSign, FileText, Scale, Users, Building, Briefcase, Plane, Scale as ScaleJustice } from 'lucide-react';
 import { practiceAreas } from '../config/practiceAreas';
 
 const Services = () => {
   const serviceIcons = [
-    Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield
+    DollarSign, FileText, Scale, Users, Home, Building, Briefcase, ScaleJustice
   ];
   
   const services = practiceAreas.map((practiceArea, index) => ({

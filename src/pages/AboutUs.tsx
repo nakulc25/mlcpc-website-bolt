@@ -1,10 +1,11 @@
 import React from 'react';
-import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2 } from 'lucide-react';
+import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { isValidExternalUrl } from '../utils/security';
 
 const AboutUs = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+  const [currentTestimonial, setCurrentTestimonial] = React.useState(0);
 
   const handleScheduleClick = () => {
     if (siteConfig.booking.enabled && 
@@ -32,6 +33,33 @@ const AboutUs = () => {
       console.warn('Invalid LinkedIn URL:', linkedinUrl);
       alert('LinkedIn profile is not available at this time.');
     }
+  };
+
+  // Testimonial carousel functionality
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => 
+        (prev + 1) % siteConfig.testimonials.length
+      );
+    }, siteConfig.testimonialCarousel.autoAdvanceDelay);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => 
+      (prev + 1) % siteConfig.testimonials.length
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => 
+      prev === 0 ? siteConfig.testimonials.length - 1 : prev - 1
+    );
+  };
+
+  const goToTestimonial = (index: number) => {
+    setCurrentTestimonial(index);
   };
 
   return (
@@ -128,48 +156,141 @@ const AboutUs = () => {
       </section>
       
 
-      {/* Testimonials Section */}
+      {/* Emotional Support Co-Workers */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Views and Reviews</h2>
-            {/*
+            <Heart className="w-12 h-12 text-red-500 mx-auto mb-4" />
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Emotional Support Co-Workers</h2>
             <p className="text-lg text-gray-600">
-              Trusted by clients across Toronto and the GTA
+              Meet our four-legged team members who provide comfort and joy to our workplace
             </p>
-            */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteConfig.testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {siteConfig.pets.map((pet, index) => (
               <div 
-                key={testimonial.id}
-                className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                key={pet.id}
+                className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <Quote className="w-8 h-8 text-emerald-600" />
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-                    <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-                      Verified Client
-                    </span>
-                  </div>
+                <div className="aspect-w-16 aspect-h-12">
+                  <img
+                    src={pet.image}
+                    alt={`${pet.name} - ${pet.role}`}
+                    className="w-full h-64 object-cover"
+                  />
                 </div>
                 
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
-                
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">
-                    {testimonial.title}
-                    {testimonial.company && `, ${testimonial.company}`}
+                <div className="p-6">
+                  <div className="text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">{pet.name}</h3>
+                    <p className="text-emerald-700 font-semibold">{pet.role}</p>
+                  </div>
+                  
+                  <p className="text-gray-600 mb-4 text-center">
+                    {pet.description}
                   </p>
+                  
+                  <div className="border-t border-gray-200 pt-4">
+                    <h4 className="font-semibold text-gray-900 mb-3 text-center">Personality Traits</h4>
+                    <div className="flex flex-wrap justify-center gap-2">
+                      {pet.personality.map((trait, idx) => (
+                        <span
+                          key={idx}
+                          className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-medium"
+                        >
+                          {trait}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+      {/* Testimonials Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Views and Reviews</h2>
+          </div>
+
+          {/* Testimonial Carousel */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden rounded-xl">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+              >
+                {siteConfig.testimonials.map((testimonial) => (
+                  <div 
+                    key={testimonial.id}
+                    className="w-full flex-shrink-0 bg-white rounded-xl p-8 shadow-lg mx-2"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <Quote className="w-10 h-10 text-emerald-600" />
+                      <div className="flex items-center space-x-2">
+                        <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                        <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                          Verified Client
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-700 mb-8 leading-relaxed italic text-lg text-center">
+                      "{testimonial.content}"
+                    </p>
+                    
+                    <div className="border-t border-gray-200 pt-6 text-center">
+                      <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
+                      <p className="text-gray-600">
+                        {testimonial.title}
+                        {testimonial.company && `, ${testimonial.company}`}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            {siteConfig.testimonialCarousel.showArrows && siteConfig.testimonials.length > 1 && (
+              <>
+                <button
+                  onClick={prevTestimonial}
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white hover:bg-gray-50 text-emerald-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+                
+                <button
+                  onClick={nextTestimonial}
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white hover:bg-gray-50 text-emerald-700 p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              </>
+            )}
+
+            {/* Dots Indicator */}
+            {siteConfig.testimonialCarousel.showDots && siteConfig.testimonials.length > 1 && (
+              <div className="flex justify-center space-x-2 mt-8">
+                {siteConfig.testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToTestimonial(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                      index === currentTestimonial
+                        ? 'bg-emerald-600 scale-125'
+                        : 'bg-gray-300 hover:bg-emerald-400'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>

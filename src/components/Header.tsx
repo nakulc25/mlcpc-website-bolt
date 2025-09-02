@@ -10,8 +10,9 @@ const Header = () => {
   const navItems = [
     { name: 'About Us', href: '/about', type: 'route' },
     { name: 'Practice Areas', href: '#services', type: 'anchor' },
+    { name: 'Resources', href: '/resources', type: 'route' },
+    { name: 'FAQs', href: '/faqs', type: 'route' },
     { name: 'Contact Us', href: '#contact', type: 'anchor' },
-    { name: 'Resources/FAQs', href: '#resources', type: 'anchor' },
   ];
 
   const handleNavClick = (item: typeof navItems[0]) => {
