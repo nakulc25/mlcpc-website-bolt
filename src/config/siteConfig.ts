@@ -104,7 +104,7 @@ export const siteConfig: SiteConfig = {
   },
   consultation: {
     title: "Free Initial Consultation",
-    description: "Get expert legal advice tailored to your specific situation. Our experienced lawyers are here to help you understand your options and protect your interests.",
+    description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases.",
     features: [
       "30-minute consultation",
       "Case evaluation",
