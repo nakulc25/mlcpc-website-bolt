@@ -91,7 +91,7 @@ const Contact = () => {
         from_name: sanitizedData.name,
         from_email: sanitizedData.email,
         message: sanitizedData.message,
-        to_email: siteConfig.email.toEmail,
+        to_email: siteConfig.firm.email,
         urgent: sanitizedData.urgent ? 'Yes - URGENT' : 'No',
         subject: sanitizedData.urgent 
           ? `URGENT: New Contact Form Submission from ${sanitizedData.name}`
@@ -100,10 +100,10 @@ const Contact = () => {
 
       // Send email using EmailJS
       await emailjs.send(
-        siteConfig.email.serviceId,
-        siteConfig.email.templateId,
+        siteConfig.emailService.serviceId,
+        siteConfig.emailService.templateId,
         templateParams,
-        siteConfig.email.publicKey
+        siteConfig.emailService.publicKey
       );
 
       setFormStatus({

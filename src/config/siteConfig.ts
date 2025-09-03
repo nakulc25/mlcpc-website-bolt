@@ -4,8 +4,10 @@ export interface SiteConfig {
     tagline: string;
     phone: string;
     email: string;
+    fax: string;
     address: {
       street: string;
+      suite: string;
       city: string;
       province: string;
       postalCode: string;
@@ -74,8 +76,10 @@ export const siteConfig: SiteConfig = {
     tagline: "Professional Corporation",
     phone: "(416) 555-0123",
     email: "info@mallchhibbar.ca",
+    fax: "(416) 555-0124",
     address: {
       street: "123 Bay Street, Suite 1000",
+      suite: "Suite 1000",
       city: "Toronto",
       province: "ON",
       postalCode: "M5K 1A1"

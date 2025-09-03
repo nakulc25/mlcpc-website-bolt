@@ -36,8 +36,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <p>Address:</p>
-                  <p className="text-sm">{siteConfig.contact.address.street}, {siteConfig.contact.address.suite}</p>
-                  <p className="text-sm">{siteConfig.contact.address.city}, {siteConfig.contact.address.province} {siteConfig.contact.address.postalCode}</p>
+                  <p className="text-sm">{siteConfig.firm.address.street}, {siteConfig.firm.address.suite}</p>
+                  <p className="text-sm">{siteConfig.firm.address.city}, {siteConfig.firm.address.province} {siteConfig.firm.address.postalCode}</p>
                 </div>
               </div>
             </div>
@@ -49,16 +49,16 @@ const Footer = () => {
             <div className="space-y-3 text-emerald-200">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <span>{siteConfig.contact.phone}</span>
+                <span>{siteConfig.firm.phone}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 flex-shrink-0" />
-                <span>{siteConfig.contact.email}</span>
+                <span>{siteConfig.firm.email}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Fax className="w-5 h-5 flex-shrink-0" />
                 <div>
-                  <p>Fax: {siteConfig.contact.fax}</p>
+                  <p>Fax: {siteConfig.firm.fax}</p>
                 </div>
               </div>
             </div>
