@@ -1,10 +1,10 @@
 export interface SiteConfig {
   firm: {
     name: string;
-    tagline: string;
-    phone: string;
-    email: string;
-    fax: string;
+    shortName: string;
+    description: string;
+  };
+  contact: {
     address: {
       street: string;
       suite: string;
@@ -12,191 +12,189 @@ export interface SiteConfig {
       province: string;
       postalCode: string;
     };
+    phone: string;
+    email: string;
+    fax: string;
   };
-  emailService: {
-    serviceId: string;
-    templateId: string;
-    publicKey: string;
+  services: string[];
+  hero: {
+    backgroundImage: string;
+    title: string;
+    subtitle: string;
+    buttonText: string;
   };
   booking: {
     calendlyUrl: string;
-  };
-  hero: {
-    backgroundImage: string;
-    logoPath: string;
-    logoSvgPath: string;
-    title: string;
-    subtitle: string;
-    tagline: string;
-    buttonText: string;
+    enabled: boolean;
   };
   consultation: {
-    title: string;
+    urgentKeyword: string;
+    freeMinutes: number;
     description: string;
-    features: string[];
-    buttonText: string;
   };
-  lawyers: Array<{
+  email: {
+    serviceId: string;
+    templateId: string;
+    publicKey: string;
+    toEmail: string;
+  };
+  testimonials: {
+    id: string;
+    name: string;
+    title: string;
+    company?: string;
+    content: string;
+  }[];
+  lawyers: {
     id: string;
     name: string;
     title: string;
     image: string;
-    bio: string;
-    specializations: string[];
+    background: string[];
+    expertise: string[];
     education: string[];
+    certifications: string[];
     experience: string;
     linkedinUrl: string;
-  }>;
-  pets: Array<{
-    id: string;
-    name: string;
-    role: string;
-    image: string;
-    personality: string[];
-    favoriteActivity: string;
-  }>;
-  testimonials: Array<{
-    id: string;
-    name: string;
-    location: string;
-    text: string;
-    caseType: string;
-  }>;
-  testimonialCarousel: {
-    autoAdvance: boolean;
-    delay: number;
-    showArrows: boolean;
-    showDots: boolean;
-  };
+  }[];
 }
 
 export const siteConfig: SiteConfig = {
   firm: {
-    name: "Mall & Chhibbar Legal",
-    tagline: "Professional Corporation",
-    phone: "(416) 555-0123",
-    email: "info@mallchhibbar.ca",
-    fax: "(416) 555-0124",
+    name: "Mall & Chhibbar Legal Professional Corporation",
+    shortName: "",
+    description: "Serving Toronto and the GTA"
+  },
+  contact: {
     address: {
-      street: "123 Bay Street, Suite 1000",
-      suite: "Suite 1000",
-      city: "Toronto",
+      street: "111 Civic Centre Dr",
+      suite: "",
+      city: "Whitby",
       province: "ON",
-      postalCode: "M5K 1A1"
-    }
+      postalCode: "L1R 0C8"
+    },
+    phone: "(437) 848-2583",
+    email: "nakul@mclpc.ca",
+    fax: "(437) 848-4514"
   },
-  emailService: {
-    serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || "",
-    templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "",
-    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ""
-  },
-  booking: {
-    calendlyUrl: "https://calendly.com/mallchhibbar/consultation"
-  },
+  services: [
+    "Civil Litigation",
+    "Employment Law",
+    "Wills & Estates",
+    "Family Law",
+    "Real Estate Law",
+    "Immigration Law",
+    "Business Law",
+    "Criminal Law"
+  ],
   hero: {
     backgroundImage: "/data/homebanner.webp",
+    backgroundImage1: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop",
     logoPath: "/Logo_Assets/logo_128x128.png",
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
-    subtitle: "",
-    tagline: "Protecting What Matters",
-    buttonText: "Free 30-Minute Consultation"
+    subtitle: "Professional Corporation",
+    buttonText: "Free 30-minute Consultation"
+  },
+  booking: {
+    calendlyUrl: "https://calendly.com/nakul-mclpc",
+    enabled: true
   },
   consultation: {
-    title: "Free Initial Consultation",
-    description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases.",
-    features: [
-      "30-minute consultation",
-      "Case evaluation",
-      "Legal strategy discussion",
-      "No obligation"
-    ],
-    buttonText: "Book Your Free Consultation"
+    urgentKeyword: "Urgent",
+    freeMinutes: 30,
+    description: "We understand that legal matters can be time-sensitive. Our team is ready to provide immediate assistance for urgent cases."
   },
-  lawyers: [
-    {
-      id: "sarah-mall",
-      name: "Sarah Mall",
-      title: "Senior Partner",
-      image: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=400",
-      bio: "Sarah Mall is a seasoned legal professional with over 15 years of experience in corporate law and litigation. She has successfully represented clients in complex commercial disputes and has a proven track record of achieving favorable outcomes.",
-      specializations: ["Corporate Law", "Commercial Litigation", "Contract Disputes"],
-      education: ["J.D., University of Toronto Faculty of Law", "B.A., Queen's University"],
-      experience: "15+ years",
-      linkedinUrl: "https://linkedin.com/in/sarah-mall"
-    },
-    {
-      id: "raj-chhibbar",
-      name: "Raj Chhibbar",
-      title: "Managing Partner",
-      image: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=400",
-      bio: "Raj Chhibbar brings extensive expertise in family law and immigration matters. His compassionate approach and attention to detail have helped hundreds of families navigate complex legal challenges with confidence.",
-      specializations: ["Family Law", "Immigration Law", "Estate Planning"],
-      education: ["J.D., Osgoode Hall Law School", "B.Comm., University of British Columbia"],
-      experience: "12+ years",
-      linkedinUrl: "https://linkedin.com/in/raj-chhibbar"
-    }
-  ],
-  pets: [
-    {
-      id: "justice",
-      name: "Justice",
-      role: "Chief Morale Officer",
-      image: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=400",
-      personality: ["Loyal", "Protective", "Wise"],
-      favoriteActivity: "Greeting clients and providing emotional support during difficult times"
-    },
-    {
-      id: "bailey",
-      name: "Bailey",
-      role: "Stress Relief Specialist",
-      image: "https://images.pexels.com/photos/45201/kitty-cat-kitten-pet-45201.jpeg?auto=compress&cs=tinysrgb&w=400",
-      personality: ["Calm", "Intuitive", "Comforting"],
-      favoriteActivity: "Sitting quietly with clients who need a moment of peace"
-    },
-    {
-      id: "legal-eagle",
-      name: "Legal Eagle",
-      role: "Document Security Supervisor",
-      image: "https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=400",
-      personality: ["Alert", "Observant", "Dignified"],
-      favoriteActivity: "Overseeing important meetings from his perch"
-    }
-  ],
+  email: {
+    serviceId: "service_udmbcw8", // Replace with your EmailJS service ID
+    templateId: "template_18ibdta", // Replace with your EmailJS template ID
+    publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
+    toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
+  },
   testimonials: [
     {
       id: "testimonial-1",
-      name: "Jennifer Thompson",
-      location: "Toronto, ON",
-      text: "The team at Mall & Chhibbar provided exceptional service during my family law matter. They were professional, compassionate, and achieved an outcome that exceeded my expectations.",
-      caseType: "Family Law"
+      name: "Mary Kay McCoy",
+      title: "Broker",
+      company: "Century 21 Miller Real Estate Ltd",
+      content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients"
     },
     {
       id: "testimonial-2",
-      name: "Michael Chen",
-      location: "Mississauga, ON",
-      text: "I was facing a complex employment dispute and didn't know where to turn. The lawyers here guided me through every step and secured a favorable settlement. Highly recommended!",
-      caseType: "Employment Law"
+      name: "Mujtaba Choudhry",
+      title: "",
+      content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding."
     },
     {
       id: "testimonial-3",
-      name: "Maria Rodriguez",
-      location: "Brampton, ON",
-      text: "Outstanding immigration law services. They made the complex process simple and kept me informed throughout. Thanks to their expertise, my family is now together in Canada.",
-      caseType: "Immigration Law"
-    },
-    {
-      id: "testimonial-4",
-      name: "David Wilson",
-      location: "Oakville, ON",
-      text: "Professional, knowledgeable, and results-driven. They handled my real estate transaction flawlessly and saved me from potential legal issues. Excellent service!",
-      caseType: "Real Estate Law"
+      name: "Joana Sanchez",
+      title: "Real Estate Broker",
+      content: "What impressed me the most about this firm is their attention to detail, responsiveness, and genuine commitment to ensuring I felt informed and confident every step of the way."
     }
   ],
-  testimonialCarousel: {
-    autoAdvance: true,
-    delay: 5000,
-    showArrows: true,
-    showDots: true
-  }
+  lawyers: [
+    {
+      id: "henaa-mall",
+      name: "Henaa Mall",
+      title: "Partner",
+      image: "/data/heena.jpg",
+      background: [
+        "Henaa Mall brings a distinctive global perspective to her practice, combining corporate law experience with investment banking acumen. After relocating to Canada in 2020, she earned her LLM from the University of Toronto while conducting tax law research, then completed her articles with an upper-tier municipality before being called to the Ontario bar in 2023.",
+        "Focussing on Real Estate, Civil Litigation, Employment Law, Business Law, and Immigration, Henaa bridges transactional expertise with dispute resolution skills. Beyond her practice, she's deeply committed to professional development - mentoring over 1,000 internationally trained lawyers from 35+ countries and serving in leadership roles with the Durham Region Law Association and Durham College's Paralegal Program Advisory Committee.",
+        "Fluent in five languages, a published author and educator at heart, Henaa balances her legal practice with passions for Vedic astrology and yoga. When not advocating for clients or mentoring future lawyers, she enjoys culinary adventures across Ontario and relaxing with her sister and cats."
+      ],
+      expertise: [
+        "Family Law & Divorce Proceedings",
+        "Civil Litigation & Dispute Resolution",
+        "Business Law & Corporate Matters",
+        "Real Estate Transactions",
+        "Employment Law"
+      ],
+      education: [
+        "Juris Doctor (J.D.) - University of Toronto Faculty of Law",
+        "Bachelor of Arts (Honours) - Political Science, York University",
+        "Certificate in Alternative Dispute Resolution - Osgoode Hall"
+      ],
+      certifications: [
+       
+      ],
+      experience: "15+ years of legal practice with a focus on achieving client-centered solutions through both litigation and alternative dispute resolution methods.",
+      linkedinUrl: "https://www.linkedin.com/in/henaamall"
+    },
+    {
+      id: "nakul-chhibbar",
+      name: "Nakul Chhibbar",
+      title: "Partner",
+      image: "/data/nakul.jpg",
+      background: [
+        "Nakul Chhibbar is a strategic advocate with strong hold in Family Law, Wills & Estates, Civil Litigation and Real Estate Law. Licensed to practice law in Ontario, Nakul combines meticulous legal analysis with practical solutions tailored to each client's needs.",
+        "Nakul's approach reflects his belief that law, like fitness, requires discipline, adaptability and commitment to excellence. When not advocating for clients, he trains with the same focus he brings to the courtroom, often accompanied by his loyal dog Bravo.",
+        "At Mall & Chhibbar, Nakul has built a practice that mirrors his values: integrity in every action, diligence in every case, and personalized attention for every client. He navigates complex legal challenges with clarity and determination, transforming obstacles into favorable outcomes.",
+        "An active member of the Durham Region Law Association and Peel Law Association, Nakul services clients across Ontario.",
+        "Nakul serves clients fluent in English, Hindi, Urdu and Punjabi.",
+        "",
+        ""
+      ],
+      expertise: [
+        "Immigration & Refugee Law",
+        "Criminal Law & Defense",
+        "Wills & Estate Planning",
+        "Human Rights Law",
+        "Appeals & Judicial Review"
+      ],
+      education: [
+        "Juris Doctor (J.D.) - Osgoode Hall Law School, York University",
+        "Master of Laws (LL.M.) - Immigration Law, University of British Columbia",
+        "Bachelor of Arts (Honours) - International Relations, University of Toronto"
+      ],
+      certifications: [
+        "Licensed to Practice Law in Ontario",
+        "Member of the Law Society of Ontario",
+        "Immigration Consultant Certification - ICCRC",
+        "Criminal Law Specialist Certification"
+      ],
+      experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases.",
+      linkedinUrl: "https://www.linkedin.com/in/nakul-chhibbar-332414136"
+    }
+  ]
 };
