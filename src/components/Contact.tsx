@@ -91,7 +91,7 @@ const Contact = () => {
         from_name: sanitizedData.name,
         from_email: sanitizedData.email,
         message: sanitizedData.message,
-        to_email: siteConfig.firm.email,
+        to_email: siteConfig.email.toEmail,
         urgent: sanitizedData.urgent ? 'Yes - URGENT' : 'No',
         subject: sanitizedData.urgent 
           ? `URGENT: New Contact Form Submission from ${sanitizedData.name}`
@@ -100,10 +100,10 @@ const Contact = () => {
 
       // Send email using EmailJS
       await emailjs.send(
-        siteConfig.emailService.serviceId,
-        siteConfig.emailService.templateId,
+        siteConfig.email.serviceId,
+        siteConfig.email.templateId,
         templateParams,
-        siteConfig.emailService.publicKey
+        siteConfig.email.publicKey
       );
 
       setFormStatus({
@@ -188,7 +188,7 @@ const Contact = () => {
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-base font-medium text-gray-700 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Name
                 </label>
                 <input
@@ -209,7 +209,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-base font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email
                 </label>
                 <input
@@ -230,7 +230,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-base font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
