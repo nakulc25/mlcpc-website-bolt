@@ -100,7 +100,7 @@ export const siteConfig: SiteConfig = {
     title: "Mall & Chhibbar Legal",
     subtitle: "",
     tagline: "Protecting What Matters",
-    buttonText: "Schedule Consultation"
+    buttonText: "Free 30-Minute Consultation"
   },
   consultation: {
     title: "Free Initial Consultation",
