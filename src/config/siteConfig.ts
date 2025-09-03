@@ -98,7 +98,7 @@ export const siteConfig: SiteConfig = {
     logoPath: "/Logo_Assets/logo_128x128.png",
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
-    subtitle: "Professional Corporation",
+    subtitle: "",
     tagline: "Protecting What Matters",
     buttonText: "Schedule Consultation"
   },
