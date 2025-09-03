@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   // Show setup notice if EmailJS is not configured
-  const isEmailConfigured = siteConfig.email.serviceId !== 'YOUR_EMAILJS_SERVICE_ID';
+  const isEmailConfigured = siteConfig.emailService.serviceId !== 'YOUR_EMAILJS_SERVICE_ID';
 
   return (
     <div className="min-h-screen">
