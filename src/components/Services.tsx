@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { DollarSign, FileText, Scale, Users, Building, Briefcase, Plane, Scale as ScaleJustice } from 'lucide-react';
+import { DollarSign, FileText, Scale, Users, Building, Briefcase, Plane, Scale as ScaleJustice, Home } from 'lucide-react';
 import { practiceAreas } from '../config/practiceAreas';
 
 const Services = () => {
