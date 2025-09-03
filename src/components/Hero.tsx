@@ -33,6 +33,9 @@ const Hero = () => {
           <br />
           <span className="text-yellow-400">{siteConfig.hero.subtitle}</span>
         </h1>
+        <p className="text-2xl md:text-3xl mb-8 text-yellow-300 font-semibold">
+          Protecting What Matters
+        </p>
         <p className="text-xl md:text-2xl mb-8 text-gray-200">
           {siteConfig.firm.tagline}
         </p>

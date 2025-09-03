@@ -22,10 +22,172 @@ export interface PracticeArea {
 
 export const practiceAreas: PracticeArea[] = [
   {
+    id: "civil-litigation",
+    name: "Civil Litigation",
+    slug: "civil-litigation",
+    shortDescription: "Strategic litigation services for business and personal disputes.",
+    bannerImage: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "When disputes cannot be resolved through negotiation, experienced litigation counsel becomes essential. Our litigation team provides strategic representation in civil matters, always seeking the most cost-effective resolution for our clients.",
+      sections: [
+        {
+          title: "Business Disputes",
+          content: [
+            "Commercial disputes can significantly impact business operations and relationships.",
+            "We handle contract disputes, partnership disagreements, and shareholder conflicts.",
+            "Our approach focuses on protecting business interests while seeking practical solutions."
+          ]
+        },
+       {
+          title: "Employment Disputes",
+          content: [
+            "Workplace disputes affect both employers and employees significantly.",
+            "We represent clients in wrongful dismissal, harassment, and discrimination cases.",
+            "Our team provides strategic advice on employment law compliance and dispute resolution."
+          ]
+        }
+      ],
+      keyServices: [
+        "Contract disputes",
+        "Employment litigation",
+        "Construction disputes",
+        "Professional negligence",
+        "Debt collection",
+        "Insurance claims",
+        "Appeals and judicial review"
+      ],
+      whyChooseUs: [
+        "Proven track record in complex litigation",
+        "Strategic approach to dispute resolution",
+        "Alternative dispute resolution",
+        "Cost-effective litigation strategies"
+      ]
+    },
+    seo: {
+      title: "Civil Litigation Lawyer Toronto | Business & Personal Disputes",
+      description: "Experienced civil litigation services in Toronto. Business disputes, personal injury, employment law, and commercial litigation representation.",
+      keywords: ["civil litigation toronto", "business disputes", "personal injury lawyer", "employment litigation", "contract disputes"]
+    }
+  },
+  {
+    id: "employment-law",
+    name: "Employment Law",
+    slug: "employment-law",
+    shortDescription: "Employment law services for both employers and employees.",
+    bannerImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "Employment relationships involve complex legal rights and obligations. Our employment law team represents both employers and employees, providing strategic advice and representation in all aspects of employment law.",
+      sections: [
+        {
+          title: "Employee Rights",
+          content: [
+            "Employees have important rights that must be protected in the workplace.",
+            "We assist with wrongful dismissal, harassment, and discrimination claims.",
+            "Our team ensures employees receive fair treatment and proper compensation."
+          ]
+        },
+        {
+          title: "Employer Services",
+          content: [
+            "Employers need proper policies and procedures to minimize legal risks.",
+            "We assist with employment contracts, policies, and compliance matters.",
+            "Our team provides training and guidance on employment law requirements."
+          ]
+        },
+        {
+          title: "Workplace Disputes",
+          content: [
+            "Workplace disputes require prompt and strategic legal intervention.",
+            "We handle grievances, human rights complaints, and labour board matters.",
+            "Our team seeks practical solutions that protect all parties' interests."
+          ]
+        }
+      ],
+      keyServices: [
+        "Wrongful dismissal claims",
+        "Employment contracts",
+        "Workplace harassment",
+        "Human rights complaints",
+        "Employment standards",
+        "Workplace policies",
+        "Labour relations",
+        "Executive compensation"
+      ],
+      whyChooseUs: [
+        "Representation for both employers and employees",
+        "Extensive employment law experience",
+        "Strategic approach to workplace disputes",
+        "Practical business-focused solutions",
+        "Strong track record in negotiations and litigation"
+      ]
+    },
+    seo: {
+      title: "Employment Lawyer Toronto | Workplace Law Services | Mall & Chhibbar",
+      description: "Expert employment law services in Toronto. Wrongful dismissal, workplace harassment, employment contracts, and human rights representation.",
+      keywords: ["employment lawyer toronto", "wrongful dismissal", "workplace harassment", "employment contracts", "human rights"]
+    }
+  },
+  {
+    id: "wills-estates",
+    name: "Wills & Estates",
+    slug: "wills-estates",
+    shortDescription: "Estate planning and administration services to protect your legacy.",
+    bannerImage: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "Proper estate planning ensures your wishes are carried out and your loved ones are protected. Our wills and estates team provides comprehensive planning services and assists families through the estate administration process.",
+      sections: [
+        {
+          title: "Will Preparation",
+          content: [
+            "A properly drafted will is essential for ensuring your wishes are carried out.",
+            "We prepare comprehensive wills that address all aspects of your estate.",
+            "Our team ensures your will complies with all legal requirements and minimizes potential disputes."
+          ]
+        },
+        {
+          title: "Estate Administration",
+          content: [
+            "Administering an estate can be complex and emotionally challenging.",
+            "We guide executors through the probate process and estate administration.",
+            "Our team handles all legal requirements while providing compassionate support."
+          ]
+        },
+        {
+          title: "Estate Planning",
+          content: [
+            "Comprehensive estate planning goes beyond just preparing a will.",
+            "We assist with powers of attorney, trusts, and tax planning strategies.",
+            "Our team helps minimize taxes and ensure smooth transfer of assets."
+          ]
+        }
+      ],
+      keyServices: [
+"Residential Real Estate Transactions",
+"Commercial Real Estate Transactions",
+"Leases",
+"Mortgages",
+"Refinancing",
+"Real Rstate Litigation",
+"Professional Discipline",
+"Construction Liens"
+      ],
+      whyChooseUs: [
+        "Compassionate approach to sensitive matters",
+        "Tax-efficient planning strategies",
+        "Ongoing support for families"
+      ]
+    },
+    seo: {
+      title: "Wills & Estates Lawyer Toronto | Estate Planning Services",
+      description: "Expert wills and estates services in Toronto. Estate planning, will preparation, probate, and estate administration with compassionate support.",
+      keywords: ["wills lawyer toronto", "estate planning", "probate lawyer", "estate administration", "power of attorney"]
+    }
+  },
+  {
     id: "family-law",
     name: "Family Law",
     slug: "family-law",
-    shortDescription: "Compassionate legal support for family matters including divorce, custody, and support issues.",
+    shortDescription: "Compassionate legal support for family matters including divorce, Parenting time & Decision-making Responsibility and support issues.",
     bannerImage: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
       overview: "Family law matters are deeply personal and emotionally challenging. Our family law team provides compassionate, strategic legal representation while protecting your interests and those of your children.",
@@ -34,7 +196,7 @@ export const practiceAreas: PracticeArea[] = [
           title: "Family Law Across Borders",
           content: [
             "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
-            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, support, and property matters.",
+            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, Parenting time & Decision-making Responsibility and property matters.",
             "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
           ]
         },
@@ -82,7 +244,7 @@ export const practiceAreas: PracticeArea[] = [
     },
     seo: {
       title: "Family Law Services Toronto | Mall & Chhibbar Legal",
-      description: "Expert family law representation in Toronto and GTA. Divorce, custody, support, and adoption services. Compassionate legal support for your family matters.",
+      description: "Expert family law representation in Toronto and GTA. Divorce, Parenting time & Decision-making Responsibility, support, and adoption services. Compassionate legal support for your family matters.",
       keywords: ["family law toronto", "divorce lawyer", "child custody", "spousal support", "separation agreement"]
     }
   },
@@ -121,14 +283,14 @@ export const practiceAreas: PracticeArea[] = [
         }
       ],
       keyServices: [
-        "Residential purchases and sales",
-        "Commercial real estate transactions",
-        "Mortgage and refinancing",
-        "Title searches and insurance",
-        "Condominium transactions",
-        "New construction purchases",
-        "Real estate litigation",
-        "Landlord and tenant matters"
+"Residential Real Estate Transactions",
+"Commercial Real Estate Transactions",
+"Leases",
+"Mortgages",
+"Refinancing",
+"Real Rstate Litigation",
+"Professional Discipline",
+"Construction Liens"
       ],
       whyChooseUs: [
         "Strong relationships with real estate professionals",

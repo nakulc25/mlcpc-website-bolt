@@ -3,6 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Resources from './pages/Resources';
+import FAQs from './pages/FAQs';
 import NotFound from './pages/NotFound';
 import PracticeAreaTemplate from './components/PracticeAreaTemplate';
 import Footer from './components/Footer';
@@ -20,7 +22,7 @@ function App() {
   }, []);
 
   // Show setup notice if EmailJS is not configured
-  const isEmailConfigured = siteConfig.email.serviceId !== 'YOUR_EMAILJS_SERVICE_ID';
+  const isEmailConfigured = siteConfig.emailService.serviceId !== 'YOUR_EMAILJS_SERVICE_ID';
 
   return (
     <div className="min-h-screen">
@@ -31,6 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/resources" element={<Resources />} />
+            <Route path="/faqs" element={<FAQs />} />
             <Route path="/practice-areas/:slug" element={<PracticeAreaTemplate />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
