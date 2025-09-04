@@ -4,8 +4,8 @@ import { Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield, Dolla
 import { practiceAreas } from '../config/practiceAreas';
 
 const Services = () => {
-  const serviceIcons = [
-    Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield
+    const serviceIcons = [
+    DollarSign, FileText, Gavel, Home, Building, Briefcase, Plane, Scale
   ];
   
   const services = practiceAreas.map((practiceArea, index) => ({
