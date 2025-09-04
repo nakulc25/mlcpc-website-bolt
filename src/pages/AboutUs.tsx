@@ -103,10 +103,6 @@ const AboutUs = () => {
                 <div className="p-8">
                   {/* Background */}
                   <div className="mb-8">
-                    <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                      <Briefcase className="w-5 h-5 mr-2 text-emerald-600" />
-                      Professional Background
-                    </h4>
                     <div className="text-gray-600 leading-relaxed space-y-4">
                       {lawyer.background.map((paragraph, idx) => (
                         <p key={idx}>{paragraph}</p>
@@ -136,7 +132,7 @@ const AboutUs = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Views and Reviews</h2>
             {/*
             <p className="text-lg text-gray-600">
               Trusted by clients across Toronto and the GTA

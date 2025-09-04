@@ -74,7 +74,7 @@ export const siteConfig: SiteConfig = {
       postalCode: "L1R 0C8"
     },
     phone: "(437) 848-2583",
-    email: "nakul@mclpc.ca",
+    email: "info@mclpc.ca",
     fax: "(437) 848-4514"
   },
   services: [
@@ -109,7 +109,7 @@ export const siteConfig: SiteConfig = {
     serviceId: "service_udmbcw8", // Replace with your EmailJS service ID
     templateId: "template_18ibdta", // Replace with your EmailJS template ID
     publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
-    toEmail: "nakul@mclpc.ca" // Email address where form submissions will be sent
+    toEmail: "info@mclpc.ca" // Email address where form submissions will be sent
   },
   testimonials: [
     {

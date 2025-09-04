@@ -25,7 +25,7 @@ export const practiceAreas: PracticeArea[] = [
     id: "family-law",
     name: "Family Law",
     slug: "family-law",
-    shortDescription: "Compassionate legal support for family matters including divorce, custody, and support issues.",
+    shortDescription: "Compassionate legal support for family matters including divorce, Parenting time & Decision-making Responsibility and support issues.",
     bannerImage: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
       overview: "Family law matters are deeply personal and emotionally challenging. Our family law team provides compassionate, strategic legal representation while protecting your interests and those of your children.",
@@ -34,7 +34,7 @@ export const practiceAreas: PracticeArea[] = [
           title: "Family Law Across Borders",
           content: [
             "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
-            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, support, and property matters.",
+            "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, Parenting time & Decision-making Responsibility and property matters.",
             "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
           ]
         },
@@ -82,7 +82,7 @@ export const practiceAreas: PracticeArea[] = [
     },
     seo: {
       title: "Family Law Services Toronto | Mall & Chhibbar Legal",
-      description: "Expert family law representation in Toronto and GTA. Divorce, custody, support, and adoption services. Compassionate legal support for your family matters.",
+      description: "Expert family law representation in Toronto and GTA. Divorce, Parenting time & Decision-making Responsibility, support, and adoption services. Compassionate legal support for your family matters.",
       keywords: ["family law toronto", "divorce lawyer", "child custody", "spousal support", "separation agreement"]
     }
   },
@@ -121,14 +121,14 @@ export const practiceAreas: PracticeArea[] = [
         }
       ],
       keyServices: [
-        "Residential purchases and sales",
-        "Commercial real estate transactions",
-        "Mortgage and refinancing",
-        "Title searches and insurance",
-        "Condominium transactions",
-        "New construction purchases",
-        "Real estate litigation",
-        "Landlord and tenant matters"
+"Residential Real Estate Transactions",
+"Commercial Real Estate Transactions",
+"Leases",
+"Mortgages",
+"Refinancing",
+"Real Rstate Litigation",
+"Professional Discipline",
+"Construction Liens"
       ],
       whyChooseUs: [
         "Strong relationships with real estate professionals",
