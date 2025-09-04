@@ -4,10 +4,11 @@ import emailjs from '@emailjs/browser';
 import { siteConfig } from '../config/siteConfig';
 import { 
   sanitizeInput, 
-  isValidEmail, 
-  isValidName, 
+  isValidEmail,
+  isValidName,
   isValidMessage,
-  contactFormRateLimiter 
+  contactFormRateLimiter,
+  isValidExternalUrl
 } from '../utils/security';
 import { logger } from '../utils/logger';
 
@@ -28,6 +29,17 @@ const Contact = () => {
     message: '',
     urgent: false
   });
+
+  const handleScheduleClick = () => {
+    if (siteConfig.booking.enabled && 
+        siteConfig.booking.calendlyUrl && 
+        isValidExternalUrl(siteConfig.booking.calendlyUrl)) {
+      window.open(siteConfig.booking.calendlyUrl, '_blank');
+    } else {
+      // Fallback to contact section, which is this component.
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   const [formStatus, setFormStatus] = useState<FormStatus>({
     type: 'idle',
@@ -302,14 +314,26 @@ const Contact = () => {
                 </div>
                 */}
 
-                
+                <div className="mt-6">
+                  <button 
+                    onClick={handleScheduleClick}
+                    className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg text-center text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                  >
+                    <p className="text-lg font-semibold">Free {siteConfig.consultation.freeMinutes}-minute Consultation</p>
+                  </button>
+                </div>
+
+                {/*
                 <div className="bg-emerald-600 p-4 rounded-lg text-center">
                   <p className="text-lg font-semibold">Free {siteConfig.consultation.freeMinutes}-minute Consultation</p>
                 </div>
+                */}
                 
                 <div className="text-sm text-emerald-100">
                   <p>{siteConfig.consultation.description}</p>
                 </div>
+
+                
               </div>
             </div>
           </div>
