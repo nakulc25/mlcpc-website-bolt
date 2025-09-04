@@ -31,7 +31,8 @@ const Footer = () => {
           {/* Address Information */}
           <div className="lg:pl-4">
             <h4 className="text-xl font-semibold mb-4">
-              Mall & Chhibbar Legal Professional Corporation
+              Mall & Chhibbar <span className="whitespace-nowrap">Legal Professional
+              Corporation</span>
             </h4>
             <div className="space-y-2 text-emerald-200 text-base">
               <div className="flex items-start space-x-3">
@@ -69,7 +70,8 @@ const Footer = () => {
 
         <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-emerald-200 text-base">
           <p>
-            © 2025 Mall & Chhibbar Legal Professional Corporation. All rights reserved.
+            © 2025 Mall & Chhibbar <span className="whitespace-nowrap">Legal Professional
+            Corporation</span>. All rights reserved.
           </p>
           <p className="text-sm mt-2">
             This website is for informational purposes only and does not constitute legal advice.
