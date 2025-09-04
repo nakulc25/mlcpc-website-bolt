@@ -6,10 +6,10 @@ const Footer = () => {
   return (
     <footer className="bg-emerald-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between gap-8">
           {/* Logo and Tagline */}
-          <div className="lg:col-span-1 lg:pl-4">
-            <div className="flex items-center space-x-3 mb-4">
+          <div>
+            <div className="flex items-center space-x-3 mb-4 lg:pr-4">
               <img 
                 src="/Logo_Assets/logo_64x64.png" 
                 alt={`${siteConfig.firm.shortName} Logo`}
@@ -29,10 +29,10 @@ const Footer = () => {
           </div>
 
           {/* Address Information */}
-          <div className="lg:pl-4">
+          <div>
             <h4 className="text-xl font-semibold mb-4">
-              Mall & Chhibbar <span className="whitespace-nowrap">Legal Professional
-              Corporation</span>
+              Mall & Chhibbar <br />
+              <span className="whitespace-nowrap">Legal Professional Corporation</span>
             </h4>
             <div className="space-y-2 text-emerald-200 text-base">
               <div className="flex items-start space-x-3">
@@ -47,7 +47,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="lg:pr-8">
+          <div>
             <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
             <div className="space-y-3 text-emerald-200 text-base">
               <div className="flex items-center space-x-3">
@@ -70,8 +70,8 @@ const Footer = () => {
 
         <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-emerald-200 text-base">
           <p>
-            © 2025 Mall & Chhibbar <span className="whitespace-nowrap">Legal Professional
-            Corporation</span>. All rights reserved.
+            © 2025 Mall & Chhibbar <br />
+            <span className="whitespace-nowrap">Legal Professional Corporation</span>. All rights reserved.
           </p>
           <p className="text-sm mt-2">
             This website is for informational purposes only and does not constitute legal advice.
