@@ -13,7 +13,7 @@ const Footer = () => {
               <img 
                 src="/Logo_Assets/logo_64x64.png" 
                 alt={`${siteConfig.firm.shortName} Logo`}
-                className="w-12 h-12 bg-white rounded-lg p-1"
+                className="w-12 h-12 bg-white rounded-lg"
                 onError={(e) => {
                   // Fallback to icon if logo not found
                   const target = e.target as HTMLImageElement;

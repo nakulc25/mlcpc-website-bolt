@@ -174,7 +174,7 @@ const NotFound = () => {
             <img 
               src="/Logo_Assets/logo_64x64.png" 
               alt={`${siteConfig.firm.shortName} Logo`}
-              className="w-8 h-8 bg-white rounded p-1"
+              className="w-8 h-8 bg-white rounded"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
