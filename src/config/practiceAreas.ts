@@ -22,6 +22,168 @@ export interface PracticeArea {
 
 export const practiceAreas: PracticeArea[] = [
   {
+    id: "civil-litigation",
+    name: "Civil Litigation",
+    slug: "civil-litigation",
+    shortDescription: "Strategic litigation services for business and personal disputes.",
+    bannerImage: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "When disputes cannot be resolved through negotiation, experienced litigation counsel becomes essential. Our litigation team provides strategic representation in civil matters, always seeking the most cost-effective resolution for our clients.",
+      sections: [
+        {
+          title: "Business Disputes",
+          content: [
+            "Commercial disputes can significantly impact business operations and relationships.",
+            "We handle contract disputes, partnership disagreements, and shareholder conflicts.",
+            "Our approach focuses on protecting business interests while seeking practical solutions."
+          ]
+        },
+       {
+          title: "Employment Disputes",
+          content: [
+            "Workplace disputes affect both employers and employees significantly.",
+            "We represent clients in wrongful dismissal, harassment, and discrimination cases.",
+            "Our team provides strategic advice on employment law compliance and dispute resolution."
+          ]
+        }
+      ],
+      keyServices: [
+        "Contract disputes",
+        "Employment litigation",
+        "Construction disputes",
+        "Professional negligence",
+        "Debt collection",
+        "Insurance claims",
+        "Appeals and judicial review"
+      ],
+      whyChooseUs: [
+        "Proven track record in complex litigation",
+        "Strategic approach to dispute resolution",
+        "Alternative dispute resolution",
+        "Cost-effective litigation strategies"
+      ]
+    },
+    seo: {
+      title: "Civil Litigation Lawyer Toronto | Business & Personal Disputes",
+      description: "Experienced civil litigation services in Toronto. Business disputes, personal injury, employment law, and commercial litigation representation.",
+      keywords: ["civil litigation toronto", "business disputes", "personal injury lawyer", "employment litigation", "contract disputes"]
+    }
+  },
+  {
+    id: "employment-law",
+    name: "Employment Law",
+    slug: "employment-law",
+    shortDescription: "Employment law services for both employers and employees.",
+    bannerImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "Employment relationships involve complex legal rights and obligations. Our employment law team represents both employers and employees, providing strategic advice and representation in all aspects of employment law.",
+      sections: [
+        {
+          title: "Employee Rights",
+          content: [
+            "Employees have important rights that must be protected in the workplace.",
+            "We assist with wrongful dismissal, harassment, and discrimination claims.",
+            "Our team ensures employees receive fair treatment and proper compensation."
+          ]
+        },
+        {
+          title: "Employer Services",
+          content: [
+            "Employers need proper policies and procedures to minimize legal risks.",
+            "We assist with employment contracts, policies, and compliance matters.",
+            "Our team provides training and guidance on employment law requirements."
+          ]
+        },
+        {
+          title: "Workplace Disputes",
+          content: [
+            "Workplace disputes require prompt and strategic legal intervention.",
+            "We handle grievances, human rights complaints, and labour board matters.",
+            "Our team seeks practical solutions that protect all parties' interests."
+          ]
+        }
+      ],
+      keyServices: [
+        "Wrongful dismissal claims",
+        "Employment contracts",
+        "Workplace harassment",
+        "Human rights complaints",
+        "Employment standards",
+        "Workplace policies",
+        "Labour relations",
+        "Executive compensation"
+      ],
+      whyChooseUs: [
+        "Representation for both employers and employees",
+        "Extensive employment law experience",
+        "Strategic approach to workplace disputes",
+        "Practical business-focused solutions",
+        "Strong track record in negotiations and litigation"
+      ]
+    },
+    seo: {
+      title: "Employment Lawyer Toronto | Workplace Law Services | Mall & Chhibbar",
+      description: "Expert employment law services in Toronto. Wrongful dismissal, workplace harassment, employment contracts, and human rights representation.",
+      keywords: ["employment lawyer toronto", "wrongful dismissal", "workplace harassment", "employment contracts", "human rights"]
+    }
+  },
+  {
+    id: "wills-estates",
+    name: "Wills & Estates",
+    slug: "wills-estates",
+    shortDescription: "Estate planning and administration services to protect your legacy.",
+    bannerImage: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    content: {
+      overview: "Proper estate planning ensures your wishes are carried out and your loved ones are protected. Our wills and estates team provides comprehensive planning services and assists families through the estate administration process.",
+      sections: [
+        {
+          title: "Will Preparation",
+          content: [
+            "A properly drafted will is essential for ensuring your wishes are carried out.",
+            "We prepare comprehensive wills that address all aspects of your estate.",
+            "Our team ensures your will complies with all legal requirements and minimizes potential disputes."
+          ]
+        },
+        {
+          title: "Estate Administration",
+          content: [
+            "Administering an estate can be complex and emotionally challenging.",
+            "We guide executors through the probate process and estate administration.",
+            "Our team handles all legal requirements while providing compassionate support."
+          ]
+        },
+        {
+          title: "Estate Planning",
+          content: [
+            "Comprehensive estate planning goes beyond just preparing a will.",
+            "We assist with powers of attorney, trusts, and tax planning strategies.",
+            "Our team helps minimize taxes and ensure smooth transfer of assets."
+          ]
+        }
+      ],
+      keyServices: [
+        "Will preparation and updates",
+        "Estate administration",
+        "Powers of attorney",
+        "Estate litigation",
+        "Trust creation and administration",
+        "Tax planning",
+        "Guardianship applications",
+        "Estate disputes"
+      ],
+      whyChooseUs: [
+        "Compassionate approach to sensitive matters",
+        "Tax-efficient planning strategies",
+        "Ongoing support for families"
+      ]
+    },
+    seo: {
+      title: "Wills & Estates Lawyer Toronto | Estate Planning Services",
+      description: "Expert wills and estates services in Toronto. Estate planning, will preparation, probate, and estate administration with compassionate support.",
+      keywords: ["wills lawyer toronto", "estate planning", "probate lawyer", "estate administration", "power of attorney"]
+    }
+  },
+  {
     id: "family-law",
     name: "Family Law",
     slug: "family-law",
@@ -35,7 +197,7 @@ export const practiceAreas: PracticeArea[] = [
           content: [
             "Our firm is uniquely positioned to assist families navigating legal issues between Canada and India.",
             "As lawyers licensed in both jurisdictions, we provide strategic advice and representation in cross-border family law cases, including parenting, custody, Parenting time & Decision-making Responsibility and property matters.",
-            "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients’ rights and achieve practical outcomes across borders."
+            "We understand the complexities that arise when legal systems overlap and offer tailored solutions to protect our clients' rights and achieve practical outcomes across borders."
           ]
         },
         {
@@ -144,51 +306,62 @@ export const practiceAreas: PracticeArea[] = [
     }
   },
   {
-    id: "civil-litigation",
-    name: "Civil Litigation",
-    slug: "civil-litigation",
-    shortDescription: "Strategic litigation services for business and personal disputes.",
-    bannerImage: "https://images.pexels.com/photos/5668772/pexels-photo-5668772.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
+    id: "immigration",
+    name: "Immigration",
+    slug: "immigration",
+    shortDescription: "Comprehensive immigration services for individuals and families.",
+    bannerImage: "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
     content: {
-      overview: "When disputes cannot be resolved through negotiation, experienced litigation counsel becomes essential. Our litigation team provides strategic representation in civil matters, always seeking the most cost-effective resolution for our clients.",
+      overview: "Immigration law is complex and constantly evolving. Our immigration team provides services to help individuals and families navigate the Canadian immigration system and achieve their goals of living and working in Canada.",
       sections: [
         {
-          title: "Business Disputes",
+          title: "Business Immigration",
           content: [
-            "Commercial disputes can significantly impact business operations and relationships.",
-            "We handle contract disputes, partnership disagreements, and shareholder conflicts.",
-            "Our approach focuses on protecting business interests while seeking practical solutions."
+            "Canada offers various programs for business immigrants and investors.",
+            "We assist with start-up visas, self-employed persons, and investor programs."
           ]
         },
-       {
-          title: "Employment Disputes",
+        {
+          title: "Permanent Residence",
           content: [
-            "Workplace disputes affect both employers and employees significantly.",
-            "We represent clients in wrongful dismissal, harassment, and discrimination cases.",
-            "Our team provides strategic advice on employment law compliance and dispute resolution."
+            "Obtaining permanent residence in Canada opens doors to numerous opportunities.",
+            "We assist with various immigration programs including Express Entry and Provincial Nominee Programs.",
+            "Our team provides strategic advice on the best pathway for your specific situation."
+          ]
+        },
+        {
+          title: "Family Sponsorship",
+          content: [
+            "Family reunification is a cornerstone of Canadian immigration policy.",
+            "We assist with sponsoring spouses, children, parents, and grandparents.",
+            "Our team ensures all requirements are met and applications are properly prepared."
           ]
         }
       ],
       keyServices: [
-        "Contract disputes",
-        "Employment litigation",
-        "Construction disputes",
-        "Professional negligence",
-        "Debt collection",
-        "Insurance claims",
-        "Appeals and judicial review"
+        "Express Entry applications",
+        "Provincial Nominee Programs",
+        "Family sponsorship",
+        "Work permits",
+        "Study permits",
+        "Business immigration",
+        "Citizenship applications",
+        "Immigration appeals",
+        "Judicial Review",
+        "Mandamus",
+        "Refugee claims",
+        "Appeals from Immigration Appeals Divisions"
       ],
       whyChooseUs: [
-        "Proven track record in complex litigation",
-        "Strategic approach to dispute resolution",
-        "Alternative dispute resolution",
-        "Cost-effective litigation strategies"
+        "Multilingual services available",
+        "Strong success rate with applications",
+        "Ongoing support throughout the process"
       ]
     },
     seo: {
-      title: "Civil Litigation Lawyer Toronto | Business & Personal Disputes",
-      description: "Experienced civil litigation services in Toronto. Business disputes, personal injury, employment law, and commercial litigation representation.",
-      keywords: ["civil litigation toronto", "business disputes", "personal injury lawyer", "employment litigation", "contract disputes"]
+      title: "Immigration Lawyer Toronto | Canadian Immigration Services",
+      description: "Expert immigration services in Toronto. Permanent residence, family sponsorship, work permits, and citizenship applications with experienced legal support.",
+      keywords: ["immigration lawyer toronto", "permanent residence canada", "family sponsorship", "work permit", "express entry"]
     }
   },
   {
@@ -247,179 +420,6 @@ export const practiceAreas: PracticeArea[] = [
       title: "Business Lawyer Toronto | Corporate Law Services | Mall & Chhibbar",
       description: "Expert business law services in Toronto. Business formation, contracts, M&A, and corporate governance for businesses of all sizes.",
       keywords: ["business lawyer toronto", "corporate law", "business formation", "commercial contracts", "mergers acquisitions"]
-    }
-  },
-  {
-    id: "wills-estates",
-    name: "Wills & Estates",
-    slug: "wills-estates",
-    shortDescription: "Estate planning and administration services to protect your legacy.",
-    bannerImage: "https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
-    content: {
-      overview: "Proper estate planning ensures your wishes are carried out and your loved ones are protected. Our wills and estates team provides comprehensive planning services and assists families through the estate administration process.",
-      sections: [
-        {
-          title: "Will Preparation",
-          content: [
-            "A properly drafted will is essential for ensuring your wishes are carried out.",
-            "We prepare comprehensive wills that address all aspects of your estate.",
-            "Our team ensures your will complies with all legal requirements and minimizes potential disputes."
-          ]
-        },
-        {
-          title: "Estate Administration",
-          content: [
-            "Administering an estate can be complex and emotionally challenging.",
-            "We guide executors through the probate process and estate administration.",
-            "Our team handles all legal requirements while providing compassionate support."
-          ]
-        },
-        {
-          title: "Estate Planning",
-          content: [
-            "Comprehensive estate planning goes beyond just preparing a will.",
-            "We assist with powers of attorney, trusts, and tax planning strategies.",
-            "Our team helps minimize taxes and ensure smooth transfer of assets."
-          ]
-        }
-      ],
-      keyServices: [
-        "Will preparation and updates",
-        "Estate administration",
-        "Powers of attorney",
-        "Estate litigation",
-        "Trust creation and administration",
-        "Tax planning",
-        "Guardianship applications",
-        "Estate disputes"
-      ],
-      whyChooseUs: [
-        "Compassionate approach to sensitive matters",
-        "Tax-efficient planning strategies",
-        "Ongoing support for families"
-      ]
-    },
-    seo: {
-      title: "Wills & Estates Lawyer Toronto | Estate Planning Services",
-      description: "Expert wills and estates services in Toronto. Estate planning, will preparation, probate, and estate administration with compassionate support.",
-      keywords: ["wills lawyer toronto", "estate planning", "probate lawyer", "estate administration", "power of attorney"]
-    }
-  },
-  {
-    id: "employment-law",
-    name: "Employment Law",
-    slug: "employment-law",
-    shortDescription: "Employment law services for both employers and employees.",
-    bannerImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
-    content: {
-      overview: "Employment relationships involve complex legal rights and obligations. Our employment law team represents both employers and employees, providing strategic advice and representation in all aspects of employment law.",
-      sections: [
-        {
-          title: "Employee Rights",
-          content: [
-            "Employees have important rights that must be protected in the workplace.",
-            "We assist with wrongful dismissal, harassment, and discrimination claims.",
-            "Our team ensures employees receive fair treatment and proper compensation."
-          ]
-        },
-        {
-          title: "Employer Services",
-          content: [
-            "Employers need proper policies and procedures to minimize legal risks.",
-            "We assist with employment contracts, policies, and compliance matters.",
-            "Our team provides training and guidance on employment law requirements."
-          ]
-        },
-        {
-          title: "Workplace Disputes",
-          content: [
-            "Workplace disputes require prompt and strategic legal intervention.",
-            "We handle grievances, human rights complaints, and labour board matters.",
-            "Our team seeks practical solutions that protect all parties' interests."
-          ]
-        }
-      ],
-      keyServices: [
-        "Wrongful dismissal claims",
-        "Employment contracts",
-        "Workplace harassment",
-        "Human rights complaints",
-        "Employment standards",
-        "Workplace policies",
-        "Labour relations",
-        "Executive compensation"
-      ],
-      whyChooseUs: [
-        "Representation for both employers and employees",
-        "Extensive employment law experience",
-        "Strategic approach to workplace disputes",
-        "Practical business-focused solutions",
-        "Strong track record in negotiations and litigation"
-      ]
-    },
-    seo: {
-      title: "Employment Lawyer Toronto | Workplace Law Services | Mall & Chhibbar",
-      description: "Expert employment law services in Toronto. Wrongful dismissal, workplace harassment, employment contracts, and human rights representation.",
-      keywords: ["employment lawyer toronto", "wrongful dismissal", "workplace harassment", "employment contracts", "human rights"]
-    }
-  },
-  {
-    id: "immigration",
-    name: "Immigration",
-    slug: "immigration",
-    shortDescription: "Comprehensive immigration services for individuals and families.",
-    bannerImage: "https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1920&h=600&fit=crop",
-    content: {
-      overview: "Immigration law is complex and constantly evolving. Our immigration team provides services to help individuals and families navigate the Canadian immigration system and achieve their goals of living and working in Canada.",
-      sections: [
-        {
-          title: "Business Immigration",
-          content: [
-            "Canada offers various programs for business immigrants and investors.",
-            "We assist with start-up visas, self-employed persons, and investor programs."
-          ]
-        },
-        {
-          title: "Permanent Residence",
-          content: [
-            "Obtaining permanent residence in Canada opens doors to numerous opportunities.",
-            "We assist with various immigration programs including Express Entry and Provincial Nominee Programs.",
-            "Our team provides strategic advice on the best pathway for your specific situation."
-          ]
-        },
-        {
-          title: "Family Sponsorship",
-          content: [
-            "Family reunification is a cornerstone of Canadian immigration policy.",
-            "We assist with sponsoring spouses, children, parents, and grandparents.",
-            "Our team ensures all requirements are met and applications are properly prepared."
-          ]
-        }
-      ],
-      keyServices: [
-        "Express Entry applications",
-        "Provincial Nominee Programs",
-        "Family sponsorship",
-        "Work permits",
-        "Study permits",
-        "Business immigration",
-        "Citizenship applications",
-        "Immigration appeals",
-        "Judicial Review",
-        "Mandamus",
-        "Refugee claims",
-        "Appeals from Immigration Appeals Divisions"
-      ],
-      whyChooseUs: [
-        "Multilingual services available",
-        "Strong success rate with applications",
-        "Ongoing support throughout the process"
-      ]
-    },
-    seo: {
-      title: "Immigration Lawyer Toronto | Canadian Immigration Services",
-      description: "Expert immigration services in Toronto. Permanent residence, family sponsorship, work permits, and citizenship applications with experienced legal support.",
-      keywords: ["immigration lawyer toronto", "permanent residence canada", "family sponsorship", "work permit", "express entry"]
     }
   },
   {

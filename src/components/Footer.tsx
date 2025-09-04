@@ -6,9 +6,9 @@ const Footer = () => {
   return (
     <footer className="bg-emerald-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pr-4">
           {/* Logo and Tagline */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 lg:pl-4">
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/Logo_Assets/logo_64x64.png" 
@@ -24,29 +24,31 @@ const Footer = () => {
               <div className="hidden items-center justify-center w-12 h-12 bg-white rounded-lg">
                 <Scale className="w-7 h-7 text-emerald-700" />
               </div>
-              <div className="text-3xl font-bold">{siteConfig.firm.shortName}</div>
+              <div className="text-4xl font-bold">{siteConfig.firm.shortName}</div>
             </div>
           </div>
 
           {/* Address Information */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">{siteConfig.firm.name}</h4>
-            <div className="space-y-2 text-emerald-200">
+          <div className="lg:pl-4">
+            <h4 className="text-xl font-semibold mb-4">
+              Mall & Chhibbar Legal Professional Corporation
+            </h4>
+            <div className="space-y-2 text-emerald-200 text-base">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <p>Address:</p>
-                  <p className="text-sm">{siteConfig.contact.address.street}, {siteConfig.contact.address.suite}</p>
-                  <p className="text-sm">{siteConfig.contact.address.city}, {siteConfig.contact.address.province} {siteConfig.contact.address.postalCode}</p>
+                  <p className="text-base">{siteConfig.firm.address.street}, {siteConfig.firm.address.suite}</p>
+                  <p className="text-base">{siteConfig.firm.address.city}, {siteConfig.firm.address.province} {siteConfig.firm.address.postalCode}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contact Information */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
-            <div className="space-y-3 text-emerald-200">
+          <div className="lg:pr-8">
+            <h4 className="text-xl font-semibold mb-4">Contact Information</h4>
+            <div className="space-y-3 text-emerald-200 text-base">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <span>{siteConfig.contact.phone}</span>
@@ -65,11 +67,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-emerald-200">
-          <p className="text-sm">
-            © 2025 {siteConfig.firm.name} All rights reserved.
+        <div className="border-t border-emerald-700 mt-8 pt-8 text-center text-emerald-200 text-base">
+          <p>
+            © 2025 Mall & Chhibbar Legal Professional Corporation. All rights reserved.
           </p>
-          <p className="text-xs mt-2">
+          <p className="text-sm mt-2">
             This website is for informational purposes only and does not constitute legal advice.
           </p>
         </div>

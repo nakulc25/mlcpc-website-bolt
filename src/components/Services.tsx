@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield } from 'lucide-react';
+import { Users, FileText, Gavel, Home, Building, Briefcase, Plane, Shield, DollarSign, Scale } from 'lucide-react';
 import { practiceAreas } from '../config/practiceAreas';
 
 const Services = () => {
