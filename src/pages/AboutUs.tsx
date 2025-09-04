@@ -80,7 +80,7 @@ const AboutUs = () => {
             {siteConfig.lawyers.map((lawyer, index) => (
               <div 
                 key={lawyer.id} 
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 {/* Profile Header */}
@@ -100,9 +100,9 @@ const AboutUs = () => {
                 </div>
 
                 {/* Profile Content */}
-                <div className="p-8">
+                <div className="p-8 flex flex-col flex-grow">
                   {/* Background */}
-                  <div className="mb-8">
+                  <div className="mb-8 flex-grow">
                     <div className="text-gray-600 leading-relaxed space-y-4">
                       {lawyer.background.map((paragraph, idx) => (
                         <p key={idx}>{paragraph}</p>
@@ -111,7 +111,7 @@ const AboutUs = () => {
                   </div>
 
                   {/* LinkedIn Button */}
-                  <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="mt-auto pt-6 border-t border-gray-200">
                     <button
                       onClick={() => handleLinkedInClick(lawyer.linkedinUrl, lawyer.name)}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
