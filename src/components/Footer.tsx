@@ -38,8 +38,8 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <div>
                   <p>Address:</p>
-                  <p className="text-base">{siteConfig.firm.address.street}, {siteConfig.firm.address.suite}</p>
-                  <p className="text-base">{siteConfig.firm.address.city}, {siteConfig.firm.address.province} {siteConfig.firm.address.postalCode}</p>
+                  <p className="text-base">{siteConfig.contact.address.street}, {siteConfig.contact.address.suite}</p>
+                  <p className="text-base">{siteConfig.contact.address.city}, {siteConfig.contact.address.province} {siteConfig.contact.address.postalCode}</p>
                 </div>
               </div>
             </div>
