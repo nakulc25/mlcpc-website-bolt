@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2, ChevronLeft, ChevronRight, PawPrint, ToyBrick } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { isValidExternalUrl } from '../utils/security';
 
@@ -175,10 +175,69 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
+
+      {/* Emotional Support Co-Workers Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Emotional Support Co-Workers
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              The furry friends who keep our spirits high and our stress levels low.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {siteConfig.pets.map((pet) => (
+              <div key={pet.id} className="bg-gray-50 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col">
+                {/* Pet Image */}
+                <div className="relative">
+                  <img 
+                    src={pet.image} 
+                    alt={pet.name}
+                    className="w-full h-80 object-cover"
+                  />
+                  <div className="absolute bottom-0 left-0 bg-gradient-to-t from-black/70 to-transparent w-full p-6 text-white">
+                    <h3 className="text-2xl font-bold">{pet.name}</h3>
+                    <p className="text-emerald-200">{pet.role}</p>
+                  </div>
+                </div>
+
+                {/* Pet Details */}
+                <div className="p-6 flex-grow flex flex-col">
+                  <div className="mb-6">
+                    <h4 className="font-bold text-gray-800 mb-3 flex items-center text-lg">
+                      <PawPrint className="w-5 h-5 mr-2 text-emerald-700" />
+                      Personality
+                    </h4>
+                    <ul className="space-y-2 text-gray-600">
+                      {pet.personality.map((trait, index) => (
+                        <li key={index} className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />{trait}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-auto">
+                    <h4 className="font-bold text-gray-800 mb-3 flex items-center text-lg">
+                      <ToyBrick className="w-5 h-5 mr-2 text-emerald-700" />
+                      Favorite Activities
+                    </h4>
+                    <ul className="space-y-2 text-gray-600">
+                      {pet.favoriteActivities.map((activity, index) => (
+                        <li key={index} className="flex items-center"><CheckCircle2 className="w-4 h-4 mr-2 text-emerald-600 flex-shrink-0" />{activity}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Views and Reviews</h2>
@@ -193,7 +252,7 @@ const AboutUs = () => {
                 >
                   {testimonials.map((testimonial) => (
                     <div key={testimonial.id} className="flex-shrink-0 px-2" style={{ width: `${100 / itemsPerPage}%` }}>
-                      <div className="bg-gray-50 rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
+                      <div className="bg-white rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
                         <div className="flex items-center justify-between mb-4">
                           <Quote className="w-8 h-8 text-emerald-600" />
                           <div className="flex items-center space-x-2">
@@ -256,7 +315,7 @@ const AboutUs = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="bg-gray-50 rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
+                <div key={testimonial.id} className="bg-white rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
                   <div className="flex items-center justify-between mb-4">
                     <Quote className="w-8 h-8 text-emerald-600" />
                     <div className="flex items-center space-x-2">

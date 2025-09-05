@@ -63,6 +63,14 @@ export interface SiteConfig {
     experience: string;
     linkedinUrl: string;
   }[];
+  pets: {
+    id: string;
+    name: string;
+    role: string;
+    image: string;
+    personality: string[];
+    favoriteActivities: string[];
+  }[];
 }
 
 export const siteConfig: SiteConfig = {
@@ -212,6 +220,32 @@ export const siteConfig: SiteConfig = {
       ],
       experience: "12+ years specializing in immigration law with extensive experience in complex refugee claims, family reunification, and criminal inadmissibility cases.",
       linkedinUrl: "https://www.linkedin.com/in/nakul-chhibbar-332414136"
+    }
+  ],
+  pets: [
+    {
+      id: "bravo",
+      name: "Bravo",
+      role: "Chief Morale Officer",
+      image: "/data/bravo.jpg",
+      personality: ["Loyal", "Energetic", "Affectionate"],
+      favoriteActivities: [
+        "Greeting clients with a wagging tail",
+        "Napping in sunbeams",
+        "Office zoomies"
+      ]
+    },
+    {
+      id: "bailey",
+      name: "Bailey",
+      role: "Feline Legal Advisor",
+      image: "/data/bailey.jpg",
+      personality: ["Independent", "Curious", "Vocal"],
+      favoriteActivities: [
+        "Supervising important paperwork",
+        "Mastering the art of the catnap",
+        "Keyboard warming services"
+      ]
     }
   ]
 };
