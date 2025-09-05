@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Scale } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: 'About Us', href: '/about', type: 'route' },
@@ -17,10 +18,15 @@ const Header = () => {
 
   const handleNavClick = (item: typeof navItems[0]) => {
     setIsMenuOpen(false);
-    
-    if (item.type === 'anchor' && location.pathname !== '/') {
-      // If we're not on home page and clicking an anchor link, go to home first
-      window.location.href = '/' + item.href;
+
+    if (item.type === 'anchor') {
+      if (location.pathname !== '/') {
+        // If we're not on home page and clicking an anchor link, go to home first
+        navigate('/' + item.href);
+      } else {
+        // If on home page, just scroll to the anchor
+        document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
 
@@ -67,7 +73,10 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   className="font-medium text-base md:text-lg text-gray-700 hover:text-emerald-700 transition-colors duration-200"
-                  onClick={() => handleNavClick(item)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item);
+                  }}
                 >
                   {item.name}
                 </a>
@@ -107,7 +116,10 @@ const Header = () => {
                     key={item.name}
                     href={item.href}
                     className="text-gray-700 hover:text-emerald-700 font-medium transition-colors duration-200 px-2 py-1"
-                    onClick={() => handleNavClick(item)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item);
+                    }}
                   >
                     {item.name}
                   </a>

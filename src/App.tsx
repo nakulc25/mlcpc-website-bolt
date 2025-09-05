@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import FaqPage from './pages/FaqPage';
 import NotFound from './pages/NotFound';
+import ResourcesPage from './pages/ResourcesPage';
 import PracticeAreaTemplate from './components/PracticeAreaTemplate';
 import Footer from './components/Footer';
 import EmailSetup from './components/EmailSetup';
@@ -31,6 +33,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutUs />} />
+            <Route path="/faqs" element={<FaqPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
             <Route path="/practice-areas/:slug" element={<PracticeAreaTemplate />} />
             <Route path="/404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
