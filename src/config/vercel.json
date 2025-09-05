@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path((?!api/|_next/|data/|Logo_Assets/|[\\w-]+\\.\\w+).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

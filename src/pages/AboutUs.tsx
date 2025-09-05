@@ -1,10 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { isValidExternalUrl } from '../utils/security';
 
 const AboutUs = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+  const navigate = useNavigate();
   const testimonials = siteConfig.testimonials.items;
   const SHOW_CAROUSEL_THRESHOLD = 3;
   const isCarousel = testimonials.length > SHOW_CAROUSEL_THRESHOLD;
@@ -60,7 +62,7 @@ const AboutUs = () => {
       window.open(siteConfig.booking.calendlyUrl, '_blank');
     } else {
       // Fallback to contact section
-      window.location.href = '/#contact';
+      navigate('/#contact');
     }
   };
 

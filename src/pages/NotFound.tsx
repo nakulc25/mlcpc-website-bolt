@@ -1,16 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Home, Phone, Mail, MapPin, Search, Scale } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 const NotFound = () => {
   const [searchQuery, setSearchQuery] = React.useState('');
+  const navigate = useNavigate();
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       // Simple search - redirect to home with query parameter
-      window.location.href = `/?search=${encodeURIComponent(searchQuery.trim())}`;
+      navigate(`/?search=${encodeURIComponent(searchQuery.trim())}`);
     }
   };
 
