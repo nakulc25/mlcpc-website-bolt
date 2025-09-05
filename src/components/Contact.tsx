@@ -262,17 +262,6 @@ const Contact = () => {
                 )}
               </div>
               
-              <div className="flex items-center space-x-3">
-                <input
-                  type="checkbox"
-                  id="urgent"
-                  name="urgent"
-                  checked={formData.urgent}
-                  onChange={handleChange}
-                  className="w-4 h-4 text-emerald-600 bg-gray-100 border-gray-300 rounded focus:ring-emerald-500 focus:ring-2"
-                  disabled={formStatus.type === 'loading'}
-                />
-              </div>
               
               <button
                 type="submit"
