@@ -127,7 +127,7 @@ export const siteConfig: SiteConfig = {
   testimonials: {
     carousel: {
       enabled: true,
-      delay: 7000, // in milliseconds
+      delay: 3000, // in milliseconds
     },
     items: [
       {
