@@ -272,9 +272,6 @@ const Contact = () => {
                   className="w-4 h-4 text-emerald-600 bg-gray-100 border-gray-300 rounded focus:ring-emerald-500 focus:ring-2"
                   disabled={formStatus.type === 'loading'}
                 />
-                <label htmlFor="urgent" className="text-sm font-medium text-gray-700">
-                  This is an <strong>urgent</strong> matter requiring immediate attention
-                </label>
               </div>
               
               <button
@@ -307,12 +304,6 @@ const Contact = () => {
 
               
               <div className="space-y-4">
-              {/*
-              <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span>Include <strong>"{siteConfig.consultation.urgentKeyword}"</strong> in the message.</span>
-                </div>
-                */}
 
                 <div className="mt-6">
                   <button 
@@ -323,11 +314,6 @@ const Contact = () => {
                   </button>
                 </div>
 
-                {/*
-                <div className="bg-emerald-600 p-4 rounded-lg text-center">
-                  <p className="text-lg font-semibold">Free {siteConfig.consultation.freeMinutes}-minute Consultation</p>
-                </div>
-                */}
                 
                 <div className="text-sm text-emerald-100">
                   <p>{siteConfig.consultation.description}</p>
