@@ -1,10 +1,57 @@
 import React from 'react';
-import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2 } from 'lucide-react';
+import { Scale, Briefcase, Quote, Linkedin, X, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import { isValidExternalUrl } from '../utils/security';
 
 const AboutUs = () => {
   const [selectedImage, setSelectedImage] = React.useState<string | null>(null);
+  const testimonials = siteConfig.testimonials.items;
+  const SHOW_CAROUSEL_THRESHOLD = 3;
+  const isCarousel = testimonials.length > SHOW_CAROUSEL_THRESHOLD;
+
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [itemsPerPage, setItemsPerPage] = React.useState(3);
+
+  React.useEffect(() => {
+    if (!isCarousel) return;
+
+    const calculateItemsPerPage = () => {
+      if (window.innerWidth < 768) { // sm
+        return 1;
+      }
+      if (window.innerWidth < 1024) { // md
+        return 2;
+      }
+      return 3; // lg and up
+    };
+
+    const handleResize = () => {
+      setItemsPerPage(calculateItemsPerPage());
+      setCurrentSlide(0); // Reset slide on resize
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isCarousel]);
+
+  const totalSlides = isCarousel ? Math.max(0, testimonials.length - itemsPerPage + 1) : 0;
+
+  const nextSlide = React.useCallback(() => {
+    if (!isCarousel || totalSlides <= 1) return;
+    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+  }, [isCarousel, totalSlides]);
+
+  const prevSlide = () => {
+    if (!isCarousel || totalSlides <= 1) return;
+    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+  };
+
+  React.useEffect(() => {
+    if (!isCarousel || !siteConfig.testimonials.carousel.enabled || totalSlides <= 1) return;
+    const timer = setTimeout(nextSlide, siteConfig.testimonials.carousel.delay);
+    return () => clearTimeout(timer);
+  }, [currentSlide, nextSlide, isCarousel, totalSlides]);
 
   const handleScheduleClick = () => {
     if (siteConfig.booking.enabled && 
@@ -133,44 +180,104 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Views and Reviews</h2>
-            {/*
-            <p className="text-lg text-gray-600">
-              Trusted by clients across Toronto and the GTA
-            </p>
-            */}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteConfig.testimonials.map((testimonial, index) => (
-              <div 
-                key={testimonial.id}
-                className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <Quote className="w-8 h-8 text-emerald-600" />
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-6 h-6 text-emerald-600" />
-                    <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
-                      Verified Client
-                    </span>
-                  </div>
-                </div>
-                
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
-                
-                <div className="border-t border-gray-200 pt-4">
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-600">
-                    {testimonial.title}
-                    {testimonial.company && `, ${testimonial.company}`}
-                  </p>
+          {isCarousel ? (
+            <div className="max-w-6xl mx-auto relative">
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * (100 / itemsPerPage)}%)` }}
+                >
+                  {testimonials.map((testimonial) => (
+                    <div key={testimonial.id} className="flex-shrink-0 px-2" style={{ width: `${100 / itemsPerPage}%` }}>
+                      <div className="bg-gray-50 rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
+                        <div className="flex items-center justify-between mb-4">
+                          <Quote className="w-8 h-8 text-emerald-600" />
+                          <div className="flex items-center space-x-2">
+                            <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                            <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                              Verified Client
+                            </span>
+                          </div>
+                        </div>
+                        <p className="text-gray-700 mb-6 leading-relaxed italic flex-grow">
+                          "{testimonial.content}"
+                        </p>
+                        <div className="border-t border-gray-200 pt-4 mt-auto">
+                          <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                          <p className="text-sm text-gray-600">
+                            {testimonial.title}
+                            {testimonial.company && `, ${testimonial.company}`}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
+
+              {totalSlides > 1 && (
+                <>
+                  <button
+                    onClick={prevSlide}
+                    className="absolute top-1/2 -left-4 md:-left-10 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-lg transition z-10"
+                    aria-label="Previous testimonial"
+                  >
+                    <ChevronLeft className="w-6 h-6 text-emerald-800" />
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="absolute top-1/2 -right-4 md:-right-10 transform -translate-y-1/2 bg-white/70 hover:bg-white rounded-full p-2 shadow-lg transition z-10"
+                    aria-label="Next testimonial"
+                  >
+                    <ChevronRight className="w-6 h-6 text-emerald-800" />
+                  </button>
+                </>
+              )}
+
+              {totalSlides > 1 && (
+                <div className="flex justify-center mt-6 space-x-2">
+                  {Array.from({ length: totalSlides }).map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentSlide(index)}
+                      className={`w-3 h-3 rounded-full transition-colors duration-300 ${
+                        currentSlide === index ? 'bg-emerald-600' : 'bg-gray-300 hover:bg-gray-400'
+                      }`}
+                      aria-label={`Go to testimonial page ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="bg-gray-50 rounded-xl p-8 shadow-md h-full flex flex-col min-h-[320px] sm:min-h-[280px]">
+                  <div className="flex items-center justify-between mb-4">
+                    <Quote className="w-8 h-8 text-emerald-600" />
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                      <span className="text-sm font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full">
+                        Verified Client
+                      </span>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed italic flex-grow">
+                    "{testimonial.content}"
+                  </p>
+                  <div className="border-t border-gray-200 pt-4 mt-auto">
+                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                    <p className="text-sm text-gray-600">
+                      {testimonial.title}
+                      {testimonial.company && `, ${testimonial.company}`}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
       {/* Call to Action */}

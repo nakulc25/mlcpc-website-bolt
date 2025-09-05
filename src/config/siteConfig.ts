@@ -39,12 +39,18 @@ export interface SiteConfig {
     toEmail: string;
   };
   testimonials: {
-    id: string;
-    name: string;
-    title: string;
-    company?: string;
-    content: string;
-  }[];
+    carousel: {
+      enabled: boolean;
+      delay: number;
+    };
+    items: {
+      id: string;
+      name: string;
+      title: string;
+      company?: string;
+      content: string;
+    }[];
+  };
   lawyers: {
     id: string;
     name: string;
@@ -89,7 +95,6 @@ export const siteConfig: SiteConfig = {
   ],
   hero: {
     backgroundImage: "/data/homebanner.webp",
-    backgroundImage1: "https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1280&fit=crop",
     logoPath: "/Logo_Assets/logo_128x128.png",
     logoSvgPath: "/Logo_Assets/logo.svg",
     title: "Mall & Chhibbar Legal",
@@ -111,27 +116,39 @@ export const siteConfig: SiteConfig = {
     publicKey: "FFFI7_Hn1VJ2H_Bk4", // Replace with your EmailJS public key
     toEmail: "info@mclpc.ca" // Email address where form submissions will be sent
   },
-  testimonials: [
-    {
-      id: "testimonial-1",
-      name: "Mary Kay McCoy",
-      title: "Broker",
-      company: "Century 21 Miller Real Estate Ltd",
-      content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients"
+  testimonials: {
+    carousel: {
+      enabled: true,
+      delay: 7000, // in milliseconds
     },
-    {
-      id: "testimonial-2",
-      name: "Mujtaba Choudhry",
-      title: "",
-      content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding."
-    },
-    {
-      id: "testimonial-3",
-      name: "Joana Sanchez",
-      title: "Real Estate Broker",
-      content: "What impressed me the most about this firm is their attention to detail, responsiveness, and genuine commitment to ensuring I felt informed and confident every step of the way."
-    }
-  ],
+    items: [
+      {
+        id: "testimonial-1",
+        name: "Mary Kay McCoy",
+        title: "Broker",
+        company: "Century 21 Miller Real Estate Ltd",
+        content: "They go above and beyond to ensure that everything has been completed in a timely manner while staying in continuous contact with their clients"
+      },
+      {
+        id: "testimonial-2",
+        name: "Mujtaba Choudhry",
+        title: "",
+        content: "From the very beginning, they were incredibly easy to work with — clear, professional, and approachable. The work was completed efficiently without compromising on quality, and the attention to detail was outstanding."
+      },
+      {
+        id: "testimonial-3",
+        name: "Joana Sanchez",
+        title: "Real Estate Broker",
+        content: "What impressed me the most about this firm is their attention to detail, responsiveness, and genuine commitment to ensuring I felt informed and confident every step of the way."
+      },
+      {
+        id: "testimonial-4",
+        name: "Karan Gupta",
+        title: "Software Engineer",
+        content: "The dedication, discipline and courtesy practiced by this firm at every step is really commendable."
+      }
+    ]
+  },
   lawyers: [
     {
       id: "henaa-mall",
