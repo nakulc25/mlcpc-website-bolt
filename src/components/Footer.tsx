@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 mb-4 lg:pr-4">
               <img 
-                src="/Logo_Assets/logo_64x64.png" 
+                src="/Logo_Assets/logo_128x128.png" 
                 alt={`${siteConfig.firm.shortName} Logo`}
-                className="w-12 h-12 bg-white rounded-lg"
+                className="w-26 h-26 bg-white rounded-lg"
                 onError={(e) => {
                   // Fallback to icon if logo not found
                   const target = e.target as HTMLImageElement;
@@ -21,8 +21,8 @@ const Footer = () => {
                   target.nextElementSibling?.classList.remove('hidden');
                 }}
               />
-              <div className="hidden items-center justify-center w-12 h-12 bg-white rounded-lg">
-                <Scale className="w-7 h-7 text-emerald-700" />
+              <div className="hidden items-center justify-center w-16 h-16 bg-white rounded-lg">
+                <Scale className="w-9 h-9 text-emerald-700" />
               </div>
               <div className="text-4xl font-bold">{siteConfig.firm.shortName}</div>
             </div>

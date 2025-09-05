@@ -24,31 +24,9 @@ const NotFound = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header */}
-      <header className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-            <img 
-              src="/Logo_Assets/logo_64x64.png" 
-              alt={`${siteConfig.firm.shortName} Logo`}
-              className="w-12 h-12 rounded-lg"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
-            <div className="hidden items-center justify-center w-12 h-12 bg-emerald-700 rounded-lg">
-              <Scale className="w-7 h-7 text-white" />
-            </div>
-            <div className="text-2xl font-bold text-emerald-700">{siteConfig.firm.shortName}</div>
-          </Link>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-gray-50 flex flex-col pt-20">
       {/* Main Content */}
-      <main className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <main className="flex-grow flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-4xl mx-auto text-center">
           
           {/* 404 Error */}
@@ -166,34 +144,6 @@ const NotFound = () => {
           </div>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-emerald-900 text-white py-8 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex items-center justify-center space-x-3 mb-4">
-            <img 
-              src="/Logo_Assets/logo_64x64.png" 
-              alt={`${siteConfig.firm.shortName} Logo`}
-              className="w-8 h-8 bg-white rounded"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                target.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
-            <div className="hidden items-center justify-center w-8 h-8 bg-white rounded">
-              <Scale className="w-5 h-5 text-emerald-700" />
-            </div>
-            <div className="text-xl font-bold">{siteConfig.firm.shortName}</div>
-          </div>
-          <p className="text-sm text-emerald-200">
-            © 2025 {siteConfig.firm.name}. All rights reserved.
-          </p>
-          <p className="text-xs text-emerald-300 mt-2">
-            This website is for informational purposes only and does not constitute legal advice.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
