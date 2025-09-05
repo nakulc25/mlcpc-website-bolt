@@ -31,11 +31,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 md:space-x-3 hover:opacity-80 transition-opacity">
             <img 
-              src="/Logo_Assets/logo_64x64.png" 
               src="/Logo_Assets/logo_128x64.png" 
               alt={`${siteConfig.firm.shortName} Logo`}
-              className="h-10 w-10 md:h-20 md:w-20 rounded-lg transition-all duration-300"
-              className="h-10 w-20 md:h-14 md:w-28 rounded-lg transition-all duration-300"
+              className="h-10 w-20 md:h-16 md:w-28 rounded-lg transition-all duration-300"
               onError={(e) => {
                 // Fallback to icon if logo not found
                 const target = e.target as HTMLImageElement;
@@ -43,7 +41,6 @@ const Header = () => {
                 target.nextElementSibling?.classList.remove('hidden');
               }}
             />
-            <div className="hidden items-center justify-center h-10 w-10 md:h-16 md:w-16 bg-emerald-700 rounded-lg transition-all duration-300">
             <div className="hidden items-center justify-center h-10 w-20 md:h-14 md:w-28 bg-emerald-700 rounded-lg transition-all duration-300">
               <Scale className="h-6 w-6 md:h-9 md:w-9 text-white transition-all duration-300" />
             </div>
